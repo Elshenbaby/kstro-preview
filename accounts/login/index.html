@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" dir="ltr"
+      data-theme-pref="system">
+<head>
+  <base href="/kstro-preview/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="htmx-config" content='{"includeIndicatorStyles": false, "allowEval": false, "allowScriptTags": false, "globalViewTransitions": true, "scrollIntoViewOnBoost": false, "responseHandling": [{"code": "204", "swap": false}, {"code": "[23]..", "swap": true}, {"code": "422", "swap": true}, {"code": "[45]..", "swap": false, "error": true}]}'>
+  <title>Sign in · Kstro CRM</title>
+  <link rel="icon" href="static/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="static/css/app.css">
+  <script src="static/js/theme.js"></script>
+  <script src="static/vendor/htmx.min.js" defer></script>
+  <script src="static/js/app.js" defer></script>
+  <script src="static/vendor/alpine-csp.min.js" defer></script>
+  
+</head>
+<body class="min-h-screen" hx-headers='{"X-CSRFToken": "1EnVqAnYqKnpZ1nCNwSGXMRGbZCeNTxRbWYQjPiN2k2rrNjK8qbMTYKsMemSwSz6"}'><div style="position:fixed;inset-inline:0;bottom:0;z-index:9999;padding:.5rem 1rem;background:#0f0f10;color:#fff;font:500 12px/1.4 system-ui,sans-serif;text-align:center;opacity:.92">Preview copy: forms here don't send anything. Sign-in works on the live CRM.</div>
+  
+<div class="grid min-h-screen lg:grid-cols-2">
+  <aside class="relative hidden overflow-hidden bg-ink p-12 text-white lg:flex lg:flex-col lg:justify-between">
+    <div class="pointer-events-none absolute -bottom-40 -end-40 size-[36rem] rounded-full bg-pumpkin/25 blur-3xl"></div>
+    
+<span class="inline-flex items-center gap-2.5 ">
+  <svg class="h-7 w-auto text-pumpkin" viewBox="0 0 131 141" fill="currentColor" aria-hidden="true"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+  <span class="font-display text-2xl font-medium tracking-tight">kstro</span>
+</span>
+
+    <div class="relative">
+      <p class="font-display text-5xl font-semibold leading-tight">Built to hold</p>
+      <p class="mt-4 max-w-sm text-white/60">One deal record for sales, delivery, QA and finance.</p>
+    </div>
+    <p class="relative font-mono text-xs text-white/40">kstro // 2026</p>
+  </aside>
+  <main class="flex items-center justify-center px-4 py-12 sm:px-6">
+    <div class="w-full max-w-sm">
+      <div class="mb-8 lg:hidden">
+<span class="inline-flex items-center gap-2.5 ">
+  <svg class="h-7 w-auto text-pumpkin" viewBox="0 0 131 141" fill="currentColor" aria-hidden="true"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+  <span class="font-display text-2xl font-medium tracking-tight">kstro</span>
+</span>
+</div>
+      
+      
+      
+  <h1 class="font-display text-3xl font-semibold">Built to hold</h1>
+  <p class="mt-1 text-sm text-fg-muted">Sign in to your workspace.</p>
+  <form action="#" onsubmit="return false" class="form-plain mt-8">
+    
+    
+    <p>
+      <label for="id_login">Email</label>
+      
+      <input type="email" name="login" id="id_login" autocomplete="email" required autofocus value="">
+    </p>
+    <p>
+      <label for="id_password">Password</label>
+      
+      <input type="password" name="password" id="id_password" autocomplete="current-password" required>
+    </p>
+    <p class="flex items-center justify-between text-sm">
+      <label class="!mb-0 flex items-center gap-2 font-normal"><input type="checkbox" name="remember" class="accent-pumpkin"> Remember me</label>
+      <a href="accounts/password/reset/">Forgot password?</a>
+    </p>
+    
+    <button type="submit" class="btn-primary mt-2 w-full">Sign in</button>
+  </form>
+  <p class="mt-8 text-center text-xs text-fg-muted">Accounts are created by your Kstro admin.</p>
+
+    </div>
+  </main>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="ar" dir="rtl"
+      data-theme-pref="system">
+<head>
+  <base href="/kstro-preview/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="htmx-config" content='{"includeIndicatorStyles": false, "allowEval": false, "allowScriptTags": false, "globalViewTransitions": true, "scrollIntoViewOnBoost": false, "responseHandling": [{"code": "204", "swap": false}, {"code": "[23]..", "swap": true}, {"code": "422", "swap": true}, {"code": "[45]..", "swap": false, "error": true}]}'>
+  <title>كسترو — مواقع مبنية لتدوم</title>
+  <link rel="icon" href="static/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="static/css/app.css">
+  <script src="static/js/theme.js"></script>
+  <script src="static/vendor/htmx.min.js" defer></script>
+  <script src="static/js/app.js" defer></script>
+  <script src="static/vendor/alpine-csp.min.js" defer></script>
+  
+  <meta name="description" content="كسترو شركة برمجيات مصرية تصمم وتبني المواقع والمتاجر الإلكترونية والمنصات الرقمية بالعربية والإنجليزية.">
+  <meta property="og:title" content="كسترو — مواقع مبنية لتدوم">
+  <meta property="og:description" content="كسترو شركة برمجيات مصرية تصمم وتبني المواقع والمتاجر الإلكترونية والمنصات الرقمية بالعربية والإنجليزية.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0F0F10">
+  <link rel="alternate" hreflang="en" href="https://elshenbaby.github.io/kstro-preview/">
+  <script src="static/js/site.js" defer></script>
+
+</head>
+<body class="min-h-screen" hx-headers='{"X-CSRFToken": "XofMiN3T1WTX95LENxrkJplcG5vVOalMRLPm5aSwrvC5g2S6ChHYjKy4AsJxioFc"}'><div style="position:fixed;inset-inline:0;bottom:0;z-index:9999;padding:.5rem 1rem;background:#0f0f10;color:#fff;font:500 12px/1.4 system-ui,sans-serif;text-align:center;opacity:.92">نسخة للمعاينة: النماذج هنا لا ترسل أي بيانات. تسجيل الدخول يعمل على النظام الفعلي.</div>
+  
+<div class="site">
+  
+<header class="site-nav fixed inset-x-0 top-0 z-50" data-site-nav data-tone="dark" x-data="dropdown">
+  <div class="mx-auto flex h-18 max-w-7xl items-center gap-6 px-5 sm:px-8">
+    <a href="ar/" class="site-nav-link shrink-0 no-underline" aria-label="Kstro">
+      
+<span class="inline-flex items-center gap-2.5 ">
+  <svg class="h-7 w-auto text-pumpkin" viewBox="0 0 131 141" fill="currentColor" aria-hidden="true"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+  <span class="font-display text-2xl font-medium tracking-tight">kstro</span>
+</span>
+
+    </a>
+    <nav class="ms-6 hidden items-center gap-7 text-sm font-medium lg:flex" aria-label="Primary">
+      <a class="site-nav-link link-sweep" href="ar/#services">خدماتنا</a>
+      <a class="site-nav-link link-sweep" href="ar/#process">طريقة العمل</a>
+      <a class="site-nav-link link-sweep" href="ar/#packages">الباقات</a>
+      <a class="site-nav-link link-sweep" href="ar/#faq">الأسئلة الشائعة</a>
+    </nav>
+    <div class="ms-auto flex items-center gap-2">
+      <a href="./" class="site-nav-link btn px-3 font-mono hover:opacity-70 text-xs uppercase tracking-widest no-underline">EN</a>
+
+      
+      
+        <a href="ar/accounts/login/" class="site-nav-link btn-ghost hidden sm:inline-flex" data-staff-link>دخول الفريق</a>
+      
+      <a href="ar/start/" class="btn-primary magnetic hidden sm:inline-flex" data-magnetic>
+        ابدأ مشروعك <span aria-hidden="true" class="rtl:-scale-x-100">→</span>
+      </a>
+      <button type="button" class="site-nav-link btn px-2 lg:hidden" x-on:click="toggle" aria-label="Menu">
+        
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 6h16M4 12h16M4 18h16"/>
+
+</svg>
+
+      </button>
+    </div>
+  </div>
+  <div x-show="open" x-cloak x-on:click.outside="close" class="mx-4 rounded-2xl bg-ink p-4 text-white shadow-2xl lg:hidden">
+    <a class="block rounded-lg px-3 py-3 text-lg text-white no-underline hover:bg-white/10" href="ar/#services" x-on:click="close">خدماتنا</a>
+    <a class="block rounded-lg px-3 py-3 text-lg text-white no-underline hover:bg-white/10" href="ar/#process" x-on:click="close">طريقة العمل</a>
+    <a class="block rounded-lg px-3 py-3 text-lg text-white no-underline hover:bg-white/10" href="ar/#packages" x-on:click="close">الباقات</a>
+    <a class="block rounded-lg px-3 py-3 text-lg text-white no-underline hover:bg-white/10" href="ar/#faq" x-on:click="close">الأسئلة الشائعة</a>
+    
+      <a class="block rounded-lg px-3 py-3 text-lg text-white no-underline hover:bg-white/10" href="ar/accounts/login/">دخول الفريق</a>
+    
+    <a href="ar/start/" class="btn-primary mt-3 w-full">ابدأ مشروعك</a>
+  </div>
+</header>
+
+  
+
+
+<section class="hero relative flex min-h-svh flex-col overflow-hidden bg-ink text-white" data-tone="dark" data-hero>
+  <div class="hero-grid pointer-events-none absolute inset-0" aria-hidden="true"></div>
+  <div class="hero-glow pointer-events-none absolute" aria-hidden="true"></div>
+  <svg class="hero-mark pointer-events-none absolute text-pumpkin" viewBox="0 0 131 141" fill="currentColor" aria-hidden="true"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+
+  <div class="relative mx-auto flex w-full max-w-7xl flex-1 flex-col justify-end px-5 pb-16 pt-32 sm:px-8 lg:pb-24">
+    <p class="rise font-mono text-xs uppercase tracking-[0.3em] text-pumpkin">// شركة برمجيات مصرية</p>
+    <h1 class="mt-6 font-display font-black uppercase leading-[0.85] tracking-tighter hero-title">
+      <span class="line"><span class="rise d-1">مواقع</span></span>
+      <span class="line"><span class="rise d-2 text-outline">مبنية</span></span>
+      <span class="line"><span class="rise d-3">لتدوم.</span></span>
+    </h1>
+    <div class="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+      <p class="rise d-4 max-w-xl text-lg text-white/70 sm:text-xl">نصمم ونبني المواقع والمتاجر الإلكترونية والمنصات للشركات التي تحتاجها لتعمل كل يوم، بالعربية والإنجليزية.</p>
+      <div class="rise d-5 flex flex-wrap gap-3">
+        <a href="ar/start/" class="btn-primary magnetic px-6 py-3 text-base" data-magnetic>ابدأ مشروعك <span aria-hidden="true" class="rtl:-scale-x-100">→</span></a>
+        <a href="ar/#process" class="btn px-6 py-3 text-base text-white ring-1 ring-white/25 hover:bg-white/10">اعرف طريقة عملنا</a>
+      </div>
+    </div>
+  </div>
+  <div class="relative mx-auto mb-6 flex w-full max-w-7xl items-center gap-3 px-5 font-mono text-[11px] uppercase tracking-[0.3em] text-white/40 sm:px-8" aria-hidden="true">
+    <span class="scroll-dot"></span>مرّر
+  </div>
+</section>
+
+
+<div class="marquee bg-pumpkin py-5 text-ink" data-tone="light" aria-hidden="true">
+  <div class="marquee-track">
+    
+      <div class="marquee-group">
+        
+          <span class="font-display text-3xl font-black uppercase tracking-tight sm:text-5xl">مواقع</span>
+          <svg class="size-6 shrink-0 sm:size-8" viewBox="0 0 131 141" fill="currentColor"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+        
+          <span class="font-display text-3xl font-black uppercase tracking-tight sm:text-5xl">تجربة المستخدم</span>
+          <svg class="size-6 shrink-0 sm:size-8" viewBox="0 0 131 141" fill="currentColor"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+        
+          <span class="font-display text-3xl font-black uppercase tracking-tight sm:text-5xl">متاجر إلكترونية</span>
+          <svg class="size-6 shrink-0 sm:size-8" viewBox="0 0 131 141" fill="currentColor"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+        
+          <span class="font-display text-3xl font-black uppercase tracking-tight sm:text-5xl">صفحات هبوط</span>
+          <svg class="size-6 shrink-0 sm:size-8" viewBox="0 0 131 141" fill="currentColor"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+        
+          <span class="font-display text-3xl font-black uppercase tracking-tight sm:text-5xl">عربي + إنجليزي</span>
+          <svg class="size-6 shrink-0 sm:size-8" viewBox="0 0 131 141" fill="currentColor"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+        
+          <span class="font-display text-3xl font-black uppercase tracking-tight sm:text-5xl">جاهز لهويتك</span>
+          <svg class="size-6 shrink-0 sm:size-8" viewBox="0 0 131 141" fill="currentColor"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+        
+          <span class="font-display text-3xl font-black uppercase tracking-tight sm:text-5xl">سريع</span>
+          <svg class="size-6 shrink-0 sm:size-8" viewBox="0 0 131 141" fill="currentColor"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+        
+          <span class="font-display text-3xl font-black uppercase tracking-tight sm:text-5xl">مبني ليدوم</span>
+          <svg class="size-6 shrink-0 sm:size-8" viewBox="0 0 131 141" fill="currentColor"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+        
+      </div>
+    
+      <div class="marquee-group">
+        
+          <span class="font-display text-3xl font-black uppercase tracking-tight sm:text-5xl">مواقع</span>
+          <svg class="size-6 shrink-0 sm:size-8" viewBox="0 0 131 141" fill="currentColor"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+        
+          <span class="font-display text-3xl font-black uppercase tracking-tight sm:text-5xl">تجربة المستخدم</span>
+          <svg class="size-6 shrink-0 sm:size-8" viewBox="0 0 131 141" fill="currentColor"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+        
+          <span class="font-display text-3xl font-black uppercase tracking-tight sm:text-5xl">متاجر إلكترونية</span>
+          <svg class="size-6 shrink-0 sm:size-8" viewBox="0 0 131 141" fill="currentColor"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+        
+          <span class="font-display text-3xl font-black uppercase tracking-tight sm:text-5xl">صفحات هبوط</span>
+          <svg class="size-6 shrink-0 sm:size-8" viewBox="0 0 131 141" fill="currentColor"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+        
+          <span class="font-display text-3xl font-black uppercase tracking-tight sm:text-5xl">عربي + إنجليزي</span>
+          <svg class="size-6 shrink-0 sm:size-8" viewBox="0 0 131 141" fill="currentColor"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+        
+          <span class="font-display text-3xl font-black uppercase tracking-tight sm:text-5xl">جاهز لهويتك</span>
+          <svg class="size-6 shrink-0 sm:size-8" viewBox="0 0 131 141" fill="currentColor"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+        
+          <span class="font-display text-3xl font-black uppercase tracking-tight sm:text-5xl">سريع</span>
+          <svg class="size-6 shrink-0 sm:size-8" viewBox="0 0 131 141" fill="currentColor"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+        
+          <span class="font-display text-3xl font-black uppercase tracking-tight sm:text-5xl">مبني ليدوم</span>
+          <svg class="size-6 shrink-0 sm:size-8" viewBox="0 0 131 141" fill="currentColor"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+        
+      </div>
+    
+  </div>
+</div>
+
+
+<section class="bg-mist text-ink" data-tone="light">
+  <div class="mx-auto max-w-7xl px-5 py-28 sm:px-8 lg:py-40">
+    <p class="reveal font-mono text-xs uppercase tracking-[0.3em] text-steel">// ٠١ — ما نؤمن به</p>
+    <p class="manifesto mt-8 max-w-6xl font-display text-3xl font-semibold leading-[1.15] tracking-tight sm:text-5xl lg:text-6xl" data-words>
+      <span class="word">الموقع</span> <span class="word">ليس</span> <span class="word">مجرد</span> <span class="word">إعلان.</span> <span class="word">هو</span> <span class="word">المكان</span> <span class="word">الذي</span> <span class="word">يزوره</span> <span class="word">عملاؤك</span> <span class="word">قبل</span> <span class="word">أن</span> <span class="word">يتصلوا</span> <span class="word">أو</span> <span class="word">يحجزوا</span> <span class="word">أو</span> <span class="word">يدفعوا.</span> <span class="word">لذلك</span> <span class="word">نبنيه</span> <span class="word hot">كبنية</span> <span class="word">أساسية:</span> <span class="word">هيكل</span> <span class="word">واضح،</span> <span class="word">وتصميم</span> <span class="word">صادق،</span> <span class="word hot">ومختبر</span> <span class="word">قبل</span> <span class="word">أن</span> <span class="word">تراه.</span> 
+    </p>
+  </div>
+</section>
+
+
+<section id="services" class="scroll-mt-20 bg-mist text-ink" data-tone="light">
+  <div class="mx-auto max-w-7xl px-5 pb-28 sm:px-8 lg:pb-40">
+    <div class="flex items-end justify-between gap-6 border-b border-ink/15 pb-8">
+      <div>
+        <p class="reveal font-mono text-xs uppercase tracking-[0.3em] text-steel">// ٠٢ — خدماتنا</p>
+        <h2 class="reveal mt-4 font-display text-5xl font-black uppercase tracking-tighter sm:text-7xl">ماذا نبني</h2>
+      </div>
+    </div>
+    <ul>
+      
+        <li class="service-row reveal group border-b border-ink/15">
+          <a href="ar/start/" class="grid grid-cols-[auto_1fr] items-baseline gap-x-6 py-8 text-ink no-underline sm:grid-cols-[6rem_1fr_1fr] sm:py-10">
+            <span class="font-mono text-sm text-steel">.٠١</span>
+            <span class="font-display text-4xl font-bold tracking-tight transition-transform duration-500 group-hover:translate-x-3 rtl:group-hover:-translate-x-3 sm:text-6xl">المواقع</span>
+            <span class="col-start-2 mt-3 sm:col-start-3 sm:mt-0">
+              <span class="block text-lg text-steel">مواقع للشركات بهيكل واضح وصفحات سريعة ومحتوى يمكنك تعديله.</span>
+              <span class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-ink/15 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-steel transition-colors group-hover:border-pumpkin group-hover:text-pumpkin-700">الهيكل</span><span class="rounded-full border border-ink/15 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-steel transition-colors group-hover:border-pumpkin group-hover:text-pumpkin-700">الواجهة</span><span class="rounded-full border border-ink/15 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-steel transition-colors group-hover:border-pumpkin group-hover:text-pumpkin-700">إدارة المحتوى</span>
+              </span>
+            </span>
+          </a>
+        </li>
+      
+        <li class="service-row reveal group border-b border-ink/15">
+          <a href="ar/start/" class="grid grid-cols-[auto_1fr] items-baseline gap-x-6 py-8 text-ink no-underline sm:grid-cols-[6rem_1fr_1fr] sm:py-10">
+            <span class="font-mono text-sm text-steel">.٠٢</span>
+            <span class="font-display text-4xl font-bold tracking-tight transition-transform duration-500 group-hover:translate-x-3 rtl:group-hover:-translate-x-3 sm:text-6xl">تصميم الواجهات</span>
+            <span class="col-start-2 mt-3 sm:col-start-3 sm:mt-0">
+              <span class="block text-lg text-steel">واجهات مصممة حول عملائك، جاهزة للعربية والإنجليزية.</span>
+              <span class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-ink/15 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-steel transition-colors group-hover:border-pumpkin group-hover:text-pumpkin-700">بحث</span><span class="rounded-full border border-ink/15 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-steel transition-colors group-hover:border-pumpkin group-hover:text-pumpkin-700">نظام تصميم</span><span class="rounded-full border border-ink/15 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-steel transition-colors group-hover:border-pumpkin group-hover:text-pumpkin-700">من اليمين لليسار</span>
+              </span>
+            </span>
+          </a>
+        </li>
+      
+        <li class="service-row reveal group border-b border-ink/15">
+          <a href="ar/start/" class="grid grid-cols-[auto_1fr] items-baseline gap-x-6 py-8 text-ink no-underline sm:grid-cols-[6rem_1fr_1fr] sm:py-10">
+            <span class="font-mono text-sm text-steel">.٠٣</span>
+            <span class="font-display text-4xl font-bold tracking-tight transition-transform duration-500 group-hover:translate-x-3 rtl:group-hover:-translate-x-3 sm:text-6xl">المتاجر الإلكترونية</span>
+            <span class="col-start-2 mt-3 sm:col-start-3 sm:mt-0">
+              <span class="block text-lg text-steel">كتالوج وسلة ودفع يناسب طرق الدفع في مصر.</span>
+              <span class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-ink/15 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-steel transition-colors group-hover:border-pumpkin group-hover:text-pumpkin-700">كتالوج</span><span class="rounded-full border border-ink/15 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-steel transition-colors group-hover:border-pumpkin group-hover:text-pumpkin-700">الدفع</span><span class="rounded-full border border-ink/15 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-steel transition-colors group-hover:border-pumpkin group-hover:text-pumpkin-700">بوابات الدفع</span>
+              </span>
+            </span>
+          </a>
+        </li>
+      
+        <li class="service-row reveal group border-b border-ink/15">
+          <a href="ar/start/" class="grid grid-cols-[auto_1fr] items-baseline gap-x-6 py-8 text-ink no-underline sm:grid-cols-[6rem_1fr_1fr] sm:py-10">
+            <span class="font-mono text-sm text-steel">.٠٤</span>
+            <span class="font-display text-4xl font-bold tracking-tight transition-transform duration-500 group-hover:translate-x-3 rtl:group-hover:-translate-x-3 sm:text-6xl">المنصات والأنظمة</span>
+            <span class="col-start-2 mt-3 sm:col-start-3 sm:mt-0">
+              <span class="block text-lg text-steel">أنظمة حجز ولوحات تحكم وخوادم عندما لا يكفي الموقع وحده.</span>
+              <span class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-full border border-ink/15 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-steel transition-colors group-hover:border-pumpkin group-hover:text-pumpkin-700">الخوادم</span><span class="rounded-full border border-ink/15 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-steel transition-colors group-hover:border-pumpkin group-hover:text-pumpkin-700">لوحات التحكم</span><span class="rounded-full border border-ink/15 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-steel transition-colors group-hover:border-pumpkin group-hover:text-pumpkin-700">الربط</span>
+              </span>
+            </span>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</section>
+
+
+<section id="process" class="scroll-mt-20 bg-ink text-white" data-tone="dark">
+  <div class="mx-auto grid max-w-7xl gap-16 px-5 py-28 sm:px-8 lg:grid-cols-[1fr_1.3fr] lg:py-40">
+    <div class="lg:sticky lg:top-32 lg:self-start">
+      <p class="reveal font-mono text-xs uppercase tracking-[0.3em] text-pumpkin">// ٠٣ — طريقة العمل</p>
+      <h2 class="reveal mt-4 font-display text-4xl font-black uppercase leading-[0.95] tracking-tighter sm:text-6xl">طريق واحد واضح من أول مكالمة حتى الإطلاق</h2>
+    </div>
+    <ol class="process relative" data-process>
+      <span class="process-rail absolute inset-y-0 start-[1.1rem] w-px bg-white/10" aria-hidden="true"><span class="process-fill block w-px bg-pumpkin"></span></span>
+      
+        <li class="reveal relative grid grid-cols-[2.25rem_1fr] gap-6 pb-14 last:pb-0">
+          <span class="relative z-10 grid size-9 place-items-center rounded-full border border-white/20 bg-ink font-mono text-xs text-white/70">01</span>
+          <div>
+            <h3 class="font-display text-2xl font-bold sm:text-3xl">نتكلم</h3>
+            <p class="mt-2 max-w-md text-white/60">مكالمة أو اجتماع قصير لنفهم نشاطك وأهدافك.</p>
+          </div>
+        </li>
+      
+        <li class="reveal relative grid grid-cols-[2.25rem_1fr] gap-6 pb-14 last:pb-0">
+          <span class="relative z-10 grid size-9 place-items-center rounded-full border border-white/20 bg-ink font-mono text-xs text-white/70">02</span>
+          <div>
+            <h3 class="font-display text-2xl font-bold sm:text-3xl">البداية</h3>
+            <p class="mt-2 max-w-md text-white/60">دفعة مقدمة ٥٠٪، ثم استبيان بسيط بالعربية والإنجليزية للمحتوى والهوية.</p>
+          </div>
+        </li>
+      
+        <li class="reveal relative grid grid-cols-[2.25rem_1fr] gap-6 pb-14 last:pb-0">
+          <span class="relative z-10 grid size-9 place-items-center rounded-full border border-white/20 bg-ink font-mono text-xs text-white/70">03</span>
+          <div>
+            <h3 class="font-display text-2xl font-bold sm:text-3xl">التصميم والتنفيذ</h3>
+            <p class="mt-2 max-w-md text-white/60">فريق مشروعك يصمم وينفذ وفق مواصفات مكتوبة.</p>
+          </div>
+        </li>
+      
+        <li class="reveal relative grid grid-cols-[2.25rem_1fr] gap-6 pb-14 last:pb-0">
+          <span class="relative z-10 grid size-9 place-items-center rounded-full border border-white/20 bg-ink font-mono text-xs text-white/70">04</span>
+          <div>
+            <h3 class="font-display text-2xl font-bold sm:text-3xl">فحص الجودة</h3>
+            <p class="mt-2 max-w-md text-white/60">فريق المراجعة يختبر كل صفحة قبل أن ترى أي شيء.</p>
+          </div>
+        </li>
+      
+        <li class="reveal relative grid grid-cols-[2.25rem_1fr] gap-6 pb-14 last:pb-0">
+          <span class="relative z-10 grid size-9 place-items-center rounded-full border border-white/20 bg-ink font-mono text-xs text-white/70">05</span>
+          <div>
+            <h3 class="font-display text-2xl font-bold sm:text-3xl">مراجعتك</h3>
+            <p class="mt-2 max-w-md text-white/60">تراجع النسخة الأولى، وجولات التعديل مشمولة في باقتك.</p>
+          </div>
+        </li>
+      
+        <li class="reveal relative grid grid-cols-[2.25rem_1fr] gap-6 pb-14 last:pb-0">
+          <span class="relative z-10 grid size-9 place-items-center rounded-full border border-white/20 bg-ink font-mono text-xs text-white/70">06</span>
+          <div>
+            <h3 class="font-display text-2xl font-bold sm:text-3xl">الإطلاق</h3>
+            <p class="mt-2 max-w-md text-white/60">الدفعة الأخيرة ٥٠٪، ثم نسلمك الموقع وكل بيانات الدخول الخاصة بك.</p>
+          </div>
+        </li>
+      
+        <li class="reveal relative grid grid-cols-[2.25rem_1fr] gap-6 pb-14 last:pb-0">
+          <span class="relative z-10 grid size-9 place-items-center rounded-full border border-white/20 bg-ink font-mono text-xs text-white/70">07</span>
+          <div>
+            <h3 class="font-display text-2xl font-bold sm:text-3xl">الدعم</h3>
+            <p class="mt-2 max-w-md text-white/60">نبقى معك بعد الإطلاق للإصلاحات والأسئلة.</p>
+          </div>
+        </li>
+      
+    </ol>
+  </div>
+  <div class="mx-auto grid max-w-7xl gap-px border-t border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+    
+      <div class="reveal bg-ink p-8">
+        <p class="font-mono text-xs text-pumpkin">/1</p>
+        <h3 class="mt-6 text-xl font-semibold">ثنائي اللغة دائمًا</h3>
+        <p class="mt-2 text-sm text-white/55">عربي وإنجليزي، واتجاه من اليمين لليسار بشكل صحيح.</p>
+      </div>
+    
+      <div class="reveal bg-ink p-8">
+        <p class="font-mono text-xs text-pumpkin">/2</p>
+        <h3 class="mt-6 text-xl font-semibold">مختبر قبل أن تراه</h3>
+        <p class="mt-2 text-sm text-white/55">مراجعة جودة مستقلة لكل مشروع.</p>
+      </div>
+    
+      <div class="reveal bg-ink p-8">
+        <p class="font-mono text-xs text-pumpkin">/3</p>
+        <h3 class="mt-6 text-xl font-semibold">كل شيء ملكك</h3>
+        <p class="mt-2 text-sm text-white/55">النطاق والاستضافة وبيانات الدخول تُسلَّم لك.</p>
+      </div>
+    
+      <div class="reveal bg-ink p-8">
+        <p class="font-mono text-xs text-pumpkin">/4</p>
+        <h3 class="mt-6 text-xl font-semibold">فريق واحد وملف واحد</h3>
+        <p class="mt-2 text-sm text-white/55">المبيعات والتصميم والتنفيذ والدعم يعملون على نفس الملف.</p>
+      </div>
+    
+  </div>
+</section>
+
+
+<section id="packages" class="scroll-mt-20 bg-mist text-ink" data-tone="light">
+  <div class="mx-auto max-w-7xl px-5 py-28 sm:px-8 lg:py-40">
+    <p class="reveal font-mono text-xs uppercase tracking-[0.3em] text-steel">// ٠٤ — الباقات</p>
+    <div class="mt-4 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <h2 class="reveal font-display text-5xl font-black uppercase tracking-tighter sm:text-7xl">اختر نقطة البداية</h2>
+      <p class="reveal max-w-sm text-steel">كل مشروع له عرض سعر بعد مكالمة قصيرة. الباقة تحدد النطاق والمدة.</p>
+    </div>
+    
+      <div class="mt-14 grid gap-5 md:grid-cols-3">
+        
+          <article class="package-card reveal group relative flex flex-col overflow-hidden rounded-3xl bg-white p-8 transition-transform duration-500 hover:-translate-y-1">
+            <span class="package-fill pointer-events-none absolute inset-0 bg-ink" aria-hidden="true"></span>
+            <div class="relative flex items-center justify-between">
+              <h3 class="font-display text-3xl font-black uppercase tracking-tight transition-colors group-hover:text-white">Silver</h3>
+              <span class="font-mono text-xs text-steel transition-colors group-hover:text-white/50">01</span>
+            </div>
+            <dl class="relative mt-8 grid grid-cols-2 gap-4 border-y border-ink/10 py-6 transition-colors group-hover:border-white/15">
+              <div><dt class="font-mono text-[11px] uppercase tracking-wider text-steel group-hover:text-white/50">يومًا</dt><dd class="num mt-1 text-4xl font-semibold group-hover:text-white">14</dd></div>
+              <div><dt class="font-mono text-[11px] uppercase tracking-wider text-steel group-hover:text-white/50">جولات تعديل</dt><dd class="num mt-1 text-4xl font-semibold group-hover:text-white">2</dd></div>
+            </dl>
+            
+              <ul class="relative mt-6 flex-1 space-y-2 text-steel group-hover:text-white/70">
+                <li class="flex gap-2"><span class="text-pumpkin">+</span>Website</li><li class="flex gap-2"><span class="text-pumpkin">+</span>Admin panel</li><li class="flex gap-2"><span class="text-pumpkin">+</span>Basic SEO</li>
+              </ul>
+            
+            <a href="ar/start/" class="btn-primary relative mt-8 w-full">اطلب عرض سعر</a>
+          </article>
+        
+          <article class="package-card reveal group relative flex flex-col overflow-hidden rounded-3xl bg-white p-8 transition-transform duration-500 hover:-translate-y-1">
+            <span class="package-fill pointer-events-none absolute inset-0 bg-ink" aria-hidden="true"></span>
+            <div class="relative flex items-center justify-between">
+              <h3 class="font-display text-3xl font-black uppercase tracking-tight transition-colors group-hover:text-white">Gold</h3>
+              <span class="font-mono text-xs text-steel transition-colors group-hover:text-white/50">02</span>
+            </div>
+            <dl class="relative mt-8 grid grid-cols-2 gap-4 border-y border-ink/10 py-6 transition-colors group-hover:border-white/15">
+              <div><dt class="font-mono text-[11px] uppercase tracking-wider text-steel group-hover:text-white/50">يومًا</dt><dd class="num mt-1 text-4xl font-semibold group-hover:text-white">21</dd></div>
+              <div><dt class="font-mono text-[11px] uppercase tracking-wider text-steel group-hover:text-white/50">جولات تعديل</dt><dd class="num mt-1 text-4xl font-semibold group-hover:text-white">3</dd></div>
+            </dl>
+            
+              <ul class="relative mt-6 flex-1 space-y-2 text-steel group-hover:text-white/70">
+                <li class="flex gap-2"><span class="text-pumpkin">+</span>Website</li><li class="flex gap-2"><span class="text-pumpkin">+</span>Admin panel</li><li class="flex gap-2"><span class="text-pumpkin">+</span>Basic SEO</li>
+              </ul>
+            
+            <a href="ar/start/" class="btn-primary relative mt-8 w-full">اطلب عرض سعر</a>
+          </article>
+        
+          <article class="package-card reveal group relative flex flex-col overflow-hidden rounded-3xl bg-white p-8 transition-transform duration-500 hover:-translate-y-1">
+            <span class="package-fill pointer-events-none absolute inset-0 bg-ink" aria-hidden="true"></span>
+            <div class="relative flex items-center justify-between">
+              <h3 class="font-display text-3xl font-black uppercase tracking-tight transition-colors group-hover:text-white">Platinum</h3>
+              <span class="font-mono text-xs text-steel transition-colors group-hover:text-white/50">03</span>
+            </div>
+            <dl class="relative mt-8 grid grid-cols-2 gap-4 border-y border-ink/10 py-6 transition-colors group-hover:border-white/15">
+              <div><dt class="font-mono text-[11px] uppercase tracking-wider text-steel group-hover:text-white/50">يومًا</dt><dd class="num mt-1 text-4xl font-semibold group-hover:text-white">30</dd></div>
+              <div><dt class="font-mono text-[11px] uppercase tracking-wider text-steel group-hover:text-white/50">جولات تعديل</dt><dd class="num mt-1 text-4xl font-semibold group-hover:text-white">4</dd></div>
+            </dl>
+            
+              <ul class="relative mt-6 flex-1 space-y-2 text-steel group-hover:text-white/70">
+                <li class="flex gap-2"><span class="text-pumpkin">+</span>Website</li><li class="flex gap-2"><span class="text-pumpkin">+</span>Admin panel</li><li class="flex gap-2"><span class="text-pumpkin">+</span>Basic SEO</li>
+              </ul>
+            
+            <a href="ar/start/" class="btn-primary relative mt-8 w-full">اطلب عرض سعر</a>
+          </article>
+        
+      </div>
+    
+  </div>
+</section>
+
+
+<section id="faq" class="scroll-mt-20 bg-mist text-ink" data-tone="light">
+  <div class="mx-auto grid max-w-7xl gap-12 px-5 pb-28 sm:px-8 lg:grid-cols-[1fr_1.6fr] lg:pb-40">
+    <div>
+      <p class="reveal font-mono text-xs uppercase tracking-[0.3em] text-steel">// ٠٥ — الأسئلة الشائعة</p>
+      <h2 class="reveal mt-4 font-display text-4xl font-black uppercase tracking-tighter sm:text-6xl">أسئلة نسمعها كثيرًا</h2>
+    </div>
+    <div class="divide-y divide-ink/15 border-y border-ink/15">
+      
+        <details class="faq reveal group py-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-xl font-semibold">
+            كم يستغرق تنفيذ الموقع؟
+            <span class="faq-icon grid size-9 shrink-0 place-items-center rounded-full border border-ink/20 transition-transform duration-300 group-open:rotate-45 group-open:border-pumpkin group-open:bg-pumpkin" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-4 max-w-2xl text-steel">حسب الباقة. لكل باقة مدة محددة تبدأ بعد استلام الدفعة المقدمة والاستبيان.</p>
+        </details>
+      
+        <details class="faq reveal group py-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-xl font-semibold">
+            كيف يتم الدفع؟
+            <span class="faq-icon grid size-9 shrink-0 place-items-center rounded-full border border-ink/20 transition-transform duration-300 group-open:rotate-45 group-open:border-pumpkin group-open:bg-pumpkin" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-4 max-w-2xl text-steel">٥٠٪ للبدء و٥٠٪ عندما يصبح الموقع جاهزًا للإطلاق. نقبل إنستاباي والتحويل البنكي وفودافون كاش والبطاقات والكاش.</p>
+        </details>
+      
+        <details class="faq reveal group py-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-xl font-semibold">
+            ماذا أجهز؟
+            <span class="faq-icon grid size-9 shrink-0 place-items-center rounded-full border border-ink/20 transition-transform duration-300 group-open:rotate-45 group-open:border-pumpkin group-open:bg-pumpkin" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-4 max-w-2xl text-steel">الشعار والنصوص والصور إن وجدت. والاستبيان يرشدك لكل الباقي.</p>
+        </details>
+      
+        <details class="faq reveal group py-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-xl font-semibold">
+            هل يمكن أن يكون الموقع بالعربية والإنجليزية؟
+            <span class="faq-icon grid size-9 shrink-0 place-items-center rounded-full border border-ink/20 transition-transform duration-300 group-open:rotate-45 group-open:border-pumpkin group-open:bg-pumpkin" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-4 max-w-2xl text-steel">نعم. نصمم للغتين من البداية، بما في ذلك الاتجاه من اليمين لليسار.</p>
+        </details>
+      
+        <details class="faq reveal group py-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-xl font-semibold">
+            لمن ملكية الموقع؟
+            <span class="faq-icon grid size-9 shrink-0 place-items-center rounded-full border border-ink/20 transition-transform duration-300 group-open:rotate-45 group-open:border-pumpkin group-open:bg-pumpkin" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-4 max-w-2xl text-steel">لك. عند التسليم والسداد نسلمك النطاق والاستضافة وكل بيانات الدخول.</p>
+        </details>
+      
+        <details class="faq reveal group py-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-xl font-semibold">
+            ماذا بعد الإطلاق؟
+            <span class="faq-icon grid size-9 shrink-0 place-items-center rounded-full border border-ink/20 transition-transform duration-300 group-open:rotate-45 group-open:border-pumpkin group-open:bg-pumpkin" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-4 max-w-2xl text-steel">فريق الدعم يتولى الإصلاحات والأسئلة، ويمكننا الاستمرار في تطوير الموقع معك.</p>
+        </details>
+      
+    </div>
+  </div>
+</section>
+
+
+<section class="relative overflow-hidden bg-pumpkin text-ink" data-tone="light">
+  <div class="mx-auto max-w-7xl px-5 py-28 sm:px-8 lg:py-36">
+    <h2 class="reveal font-display font-black uppercase leading-[0.85] tracking-tighter cta-title">
+      <span class="block">عندك مشروع</span><span class="block text-outline-ink">في بالك؟</span>
+    </h2>
+    <div class="mt-12 flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+      <p class="reveal max-w-md text-lg font-medium text-ink/75">أجب عن أسئلة سريعة، تستغرق دقيقتين تقريبًا، وسيتواصل معك أحد أفراد فريقنا.</p>
+      <a href="ar/start/" class="magnetic reveal inline-flex items-center gap-3 rounded-full bg-ink px-9 py-5 text-lg font-semibold text-white no-underline transition-colors hover:bg-graphite" data-magnetic>
+        ابدأ النموذج <span aria-hidden="true" class="rtl:-scale-x-100">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+  <footer class="relative overflow-hidden bg-ink text-white" data-tone="dark">
+  <div class="mx-auto max-w-7xl px-5 pt-20 sm:px-8">
+    <div class="flex flex-col gap-10 border-b border-white/10 pb-12 md:flex-row md:items-end md:justify-between">
+      <p class="font-display text-4xl font-semibold tracking-tight sm:text-6xl">مبني ليدوم.</p>
+      <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-white/60">
+        <a class="link-sweep text-white/70 no-underline" href="ar/#services">خدماتنا</a>
+        <a class="link-sweep text-white/70 no-underline" href="ar/#process">طريقة العمل</a>
+        <a class="link-sweep text-white/70 no-underline" href="ar/start/">ابدأ مشروعك</a>
+        <a class="link-sweep text-white/70 no-underline" href="ar/accounts/login/">دخول الفريق</a>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-4 py-6 font-mono text-xs text-white/40">
+      <span>© 2026 Kstro. جميع الحقوق محفوظة.</span>
+      <span>القاهرة <time class="text-pumpkin" data-cairo-clock>--:--</time> (GMT+2/3)</span>
+    </div>
+  </div>
+  <p class="footer-wordmark pointer-events-none select-none text-center font-display font-black leading-none tracking-tighter text-white/[0.04]" aria-hidden="true">kstro</p>
+</footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ar" dir="rtl"
+      data-theme-pref="system">
+<head>
+  <base href="/kstro-preview/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="htmx-config" content='{"includeIndicatorStyles": false, "allowEval": false, "allowScriptTags": false, "globalViewTransitions": true, "scrollIntoViewOnBoost": false, "responseHandling": [{"code": "204", "swap": false}, {"code": "[23]..", "swap": true}, {"code": "422", "swap": true}, {"code": "[45]..", "swap": false, "error": true}]}'>
+  <title>ابدأ مشروعك · Kstro</title>
+  <link rel="icon" href="static/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="static/css/app.css">
+  <script src="static/js/theme.js"></script>
+  <script src="static/vendor/htmx.min.js" defer></script>
+  <script src="static/js/app.js" defer></script>
+  <script src="static/vendor/alpine-csp.min.js" defer></script>
+  
+  <meta name="description" content="كسترو شركة برمجيات مصرية تصمم وتبني المواقع والمتاجر الإلكترونية والمنصات الرقمية بالعربية والإنجليزية.">
+  <meta property="og:title" content="كسترو — مواقع مبنية لتدوم">
+  <meta property="og:description" content="كسترو شركة برمجيات مصرية تصمم وتبني المواقع والمتاجر الإلكترونية والمنصات الرقمية بالعربية والإنجليزية.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0F0F10">
+  <link rel="alternate" hreflang="en" href="https://elshenbaby.github.io/kstro-preview/start/">
+  <script src="static/js/site.js" defer></script>
+
+</head>
+<body class="min-h-screen" hx-headers='{"X-CSRFToken": "8PkqLcEfPMA9pha9FQrqpzXAhUApc2X2AoIDJZ5ZZVzMASjxSoDimzalt80BtPN9"}'><div style="position:fixed;inset-inline:0;bottom:0;z-index:9999;padding:.5rem 1rem;background:#0f0f10;color:#fff;font:500 12px/1.4 system-ui,sans-serif;text-align:center;opacity:.92">نسخة للمعاينة: النماذج هنا لا ترسل أي بيانات. تسجيل الدخول يعمل على النظام الفعلي.</div>
+  
+<div class="site">
+  
+<header class="site-nav fixed inset-x-0 top-0 z-50" data-site-nav data-tone="dark" x-data="dropdown">
+  <div class="mx-auto flex h-18 max-w-7xl items-center gap-6 px-5 sm:px-8">
+    <a href="ar/" class="site-nav-link shrink-0 no-underline" aria-label="Kstro">
+      
+<span class="inline-flex items-center gap-2.5 ">
+  <svg class="h-7 w-auto text-pumpkin" viewBox="0 0 131 141" fill="currentColor" aria-hidden="true"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+  <span class="font-display text-2xl font-medium tracking-tight">kstro</span>
+</span>
+
+    </a>
+    <nav class="ms-6 hidden items-center gap-7 text-sm font-medium lg:flex" aria-label="Primary">
+      <a class="site-nav-link link-sweep" href="ar/#services">خدماتنا</a>
+      <a class="site-nav-link link-sweep" href="ar/#process">طريقة العمل</a>
+      <a class="site-nav-link link-sweep" href="ar/#packages">الباقات</a>
+      <a class="site-nav-link link-sweep" href="ar/#faq">الأسئلة الشائعة</a>
+    </nav>
+    <div class="ms-auto flex items-center gap-2">
+      <a href="start/" class="site-nav-link btn px-3 font-mono hover:opacity-70 text-xs uppercase tracking-widest no-underline">EN</a>
+
+      
+      
+        <a href="ar/accounts/login/" class="site-nav-link btn-ghost hidden sm:inline-flex" data-staff-link>دخول الفريق</a>
+      
+      <a href="ar/start/" class="btn-primary magnetic hidden sm:inline-flex" data-magnetic>
+        ابدأ مشروعك <span aria-hidden="true" class="rtl:-scale-x-100">→</span>
+      </a>
+      <button type="button" class="site-nav-link btn px-2 lg:hidden" x-on:click="toggle" aria-label="Menu">
+        
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 6h16M4 12h16M4 18h16"/>
+
+</svg>
+
+      </button>
+    </div>
+  </div>
+  <div x-show="open" x-cloak x-on:click.outside="close" class="mx-4 rounded-2xl bg-ink p-4 text-white shadow-2xl lg:hidden">
+    <a class="block rounded-lg px-3 py-3 text-lg text-white no-underline hover:bg-white/10" href="ar/#services" x-on:click="close">خدماتنا</a>
+    <a class="block rounded-lg px-3 py-3 text-lg text-white no-underline hover:bg-white/10" href="ar/#process" x-on:click="close">طريقة العمل</a>
+    <a class="block rounded-lg px-3 py-3 text-lg text-white no-underline hover:bg-white/10" href="ar/#packages" x-on:click="close">الباقات</a>
+    <a class="block rounded-lg px-3 py-3 text-lg text-white no-underline hover:bg-white/10" href="ar/#faq" x-on:click="close">الأسئلة الشائعة</a>
+    
+      <a class="block rounded-lg px-3 py-3 text-lg text-white no-underline hover:bg-white/10" href="ar/accounts/login/">دخول الفريق</a>
+    
+    <a href="ar/start/" class="btn-primary mt-3 w-full">ابدأ مشروعك</a>
+  </div>
+</header>
+
+  
+<section class="min-h-svh bg-mist text-ink" data-tone="light">
+  <div class="mx-auto grid max-w-7xl gap-10 px-5 pb-24 pt-28 sm:px-8 lg:grid-cols-[0.9fr_1.4fr] lg:gap-16 lg:pt-36">
+
+    
+    <aside class="lg:sticky lg:top-32 lg:self-start">
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-pumpkin-700">// الخطوة <span data-step-number>1</span> من 4</p>
+      <h1 class="mt-4 font-display text-5xl font-black uppercase leading-[0.9] tracking-tighter sm:text-6xl">ابدأ مشروعك</h1>
+      <p class="mt-4 max-w-sm text-steel">أربع خطوات قصيرة، بدون أي التزام: فقط لنستعد للمكالمة.</p>
+      <ol class="mt-10 hidden space-y-1 lg:block">
+        
+          <li class="step-rail flex items-center gap-4 rounded-xl px-4 py-3 text-steel" data-rail="1">
+            <span class="grid size-8 place-items-center rounded-full border border-ink/15 font-mono text-xs">01</span>
+            <span class="font-medium">مشروعك</span>
+          </li>
+        
+          <li class="step-rail flex items-center gap-4 rounded-xl px-4 py-3 text-steel" data-rail="2">
+            <span class="grid size-8 place-items-center rounded-full border border-ink/15 font-mono text-xs">02</span>
+            <span class="font-medium">نشاطك</span>
+          </li>
+        
+          <li class="step-rail flex items-center gap-4 rounded-xl px-4 py-3 text-steel" data-rail="3">
+            <span class="grid size-8 place-items-center rounded-full border border-ink/15 font-mono text-xs">03</span>
+            <span class="font-medium">النطاق</span>
+          </li>
+        
+          <li class="step-rail flex items-center gap-4 rounded-xl px-4 py-3 text-steel" data-rail="4">
+            <span class="grid size-8 place-items-center rounded-full border border-ink/15 font-mono text-xs">04</span>
+            <span class="font-medium">التواصل</span>
+          </li>
+        
+      </ol>
+    </aside>
+
+    
+    <form method="get" action="ar/start/thanks/" novalidate
+          class="inquiry relative rounded-[2rem] bg-white p-6 shadow-[0_30px_80px_-40px_rgba(15,15,16,0.35)] sm:p-10"
+          x-data="inquiry" x-on:submit="onSubmit" data-initial-step="1" data-step-count="4">
+      
+      <input type="hidden" name="utm_source" id="id_utm_source"><input type="hidden" name="utm_campaign" id="id_utm_campaign">
+      <div class="hp" aria-hidden="true"><label>Website <input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+
+      <div class="js-only mb-8 h-1 overflow-hidden rounded-full bg-mist"><div class="h-full rounded-full bg-pumpkin transition-[width] duration-500" x-bind:style="progressStyle"></div></div>
+
+      
+
+      
+      <fieldset data-step="1" x-show="isStep1" class="step">
+        <legend class="font-display text-3xl font-bold tracking-tight">ماذا تحتاج؟</legend>
+        <p class="mt-1 text-sm text-steel">اختر كل ما ينطبق.</p>
+        <div class="mt-6 grid gap-3 sm:grid-cols-2" data-require-one>
+          
+            <label class="choice">
+              <input type="checkbox" name="needs" value="website" class="sr-only" >
+              <span>موقع شركة</span>
+            </label>
+          
+            <label class="choice">
+              <input type="checkbox" name="needs" value="store" class="sr-only" >
+              <span>متجر إلكتروني</span>
+            </label>
+          
+            <label class="choice">
+              <input type="checkbox" name="needs" value="landing" class="sr-only" >
+              <span>صفحة هبوط</span>
+            </label>
+          
+            <label class="choice">
+              <input type="checkbox" name="needs" value="redesign" class="sr-only" >
+              <span>إعادة تصميم موقعي</span>
+            </label>
+          
+            <label class="choice">
+              <input type="checkbox" name="needs" value="platform" class="sr-only" >
+              <span>نظام حجز أو منصة</span>
+            </label>
+          
+            <label class="choice">
+              <input type="checkbox" name="needs" value="unsure" class="sr-only" >
+              <span>لست متأكدًا بعد</span>
+            </label>
+          
+        </div>
+        
+
+      </fieldset>
+
+      
+      <fieldset data-step="2" x-show="isStep2" class="step space-y-5">
+        <legend class="font-display text-3xl font-bold tracking-tight">نشاطك</legend>
+        <div>
+          <label class="label" for="id_business_name">اسم النشاط</label>
+          <input class="input-lg" id="id_business_name" name="business_name" required maxlength="200" value="" autocomplete="organization">
+          
+
+        </div>
+        <div>
+          <label class="label" for="id_industry">المجال</label>
+          <input class="input-lg" id="id_industry" name="industry" maxlength="100" placeholder="مثلاً: عيادة، مطعم، عقارات" value="">
+        </div>
+        <div>
+          <p class="label">هل لديك موقع حاليًا؟</p>
+          <div class="grid grid-cols-2 gap-3">
+            <label class="choice"><input type="radio" name="has_website" value="yes" class="sr-only" required ><span>نعم</span></label>
+            <label class="choice"><input type="radio" name="has_website" value="no" class="sr-only" ><span>لا</span></label>
+          </div>
+          
+
+        </div>
+        <div>
+          <label class="label" for="id_current_url">الموقع الحالي (اختياري)</label>
+          <input class="input-lg" id="id_current_url" name="current_url" type="url" dir="ltr" placeholder="https://" value="">
+          
+
+        </div>
+      </fieldset>
+
+      
+      <fieldset data-step="3" x-show="isStep3" class="step space-y-6">
+        <legend class="font-display text-3xl font-bold tracking-tight">النطاق</legend>
+        <div>
+          <p class="label">الميزانية التقريبية</p>
+          <div class="flex flex-wrap gap-2">
+            
+              <label class="chip-choice"><input type="radio" name="budget" value="lt10" class="sr-only" required ><span>أقل من ١٠٬٠٠٠ جنيه</span></label>
+            
+              <label class="chip-choice"><input type="radio" name="budget" value="10_25" class="sr-only" required ><span>١٠٬٠٠٠ – ٢٥٬٠٠٠ جنيه</span></label>
+            
+              <label class="chip-choice"><input type="radio" name="budget" value="25_50" class="sr-only" required ><span>٢٥٬٠٠٠ – ٥٠٬٠٠٠ جنيه</span></label>
+            
+              <label class="chip-choice"><input type="radio" name="budget" value="gt50" class="sr-only" required ><span>أكثر من ٥٠٬٠٠٠ جنيه</span></label>
+            
+              <label class="chip-choice"><input type="radio" name="budget" value="unsure" class="sr-only" required ><span>لست متأكدًا</span></label>
+            
+          </div>
+          
+
+        </div>
+        <div>
+          <p class="label">متى تريد الإطلاق؟</p>
+          <div class="flex flex-wrap gap-2">
+            
+              <label class="chip-choice"><input type="radio" name="timeline" value="asap" class="sr-only" required ><span>في أقرب وقت</span></label>
+            
+              <label class="chip-choice"><input type="radio" name="timeline" value="1m" class="sr-only" required ><span>خلال شهر</span></label>
+            
+              <label class="chip-choice"><input type="radio" name="timeline" value="1_3m" class="sr-only" required ><span>من شهر إلى ٣ شهور</span></label>
+            
+              <label class="chip-choice"><input type="radio" name="timeline" value="flexible" class="sr-only" required ><span>مرن</span></label>
+            
+          </div>
+          
+
+        </div>
+        <div>
+          <label class="label" for="id_message">هل هناك شيء آخر نحتاج معرفته؟</label>
+          <textarea class="input-lg min-h-32" id="id_message" name="message" maxlength="2000" placeholder="أهدافك، أمثلة تعجبك، مواعيد…"></textarea>
+        </div>
+      </fieldset>
+
+      
+      <fieldset data-step="4" x-show="isStep4" class="step space-y-5">
+        <legend class="font-display text-3xl font-bold tracking-tight">التواصل</legend>
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label class="label" for="id_name">اسمك</label>
+            <input class="input-lg" id="id_name" name="name" required maxlength="150" autocomplete="name" value="">
+            
+
+          </div>
+          <div>
+            <label class="label" for="id_phone">الهاتف / واتساب</label>
+            <input class="input-lg num" id="id_phone" name="phone" type="tel" dir="ltr" required maxlength="32" autocomplete="tel" placeholder="010 1234 5678" value="">
+            
+
+          </div>
+        </div>
+        <div>
+          <label class="label" for="id_email">البريد الإلكتروني (اختياري)</label>
+          <input class="input-lg" id="id_email" name="email" type="email" dir="ltr" autocomplete="email" value="">
+          
+
+        </div>
+        <div>
+          <p class="label">أفضل طريقة للتواصل معك</p>
+          <div class="grid grid-cols-3 gap-3">
+            
+              <label class="choice"><input type="radio" name="contact_pref" value="whatsapp" class="sr-only" required checked><span>واتساب</span></label>
+            
+              <label class="choice"><input type="radio" name="contact_pref" value="call" class="sr-only" required ><span>مكالمة</span></label>
+            
+              <label class="choice"><input type="radio" name="contact_pref" value="email" class="sr-only" required ><span>بريد إلكتروني</span></label>
+            
+          </div>
+        </div>
+        <p class="text-xs text-steel">نستخدم بياناتك فقط للتواصل معك بخصوص مشروعك.</p>
+      </fieldset>
+
+      <div class="mt-10 flex items-center justify-between gap-4 border-t border-ink/10 pt-6">
+        <button type="button" class="js-only btn-ghost" x-on:click="prev" x-show="canGoBack"><span aria-hidden="true" class="rtl:-scale-x-100">←</span> رجوع</button>
+        <span class="js-only" x-show="isFirst"></span>
+        <button type="button" class="js-only btn-primary magnetic px-7 py-3 text-base" x-on:click="next" x-show="notLast">التالي <span aria-hidden="true" class="rtl:-scale-x-100">→</span></button>
+        <button type="submit" class="btn-primary px-7 py-3 text-base" x-show="isLast">أرسل إلى كسترو</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+  <footer class="relative overflow-hidden bg-ink text-white" data-tone="dark">
+  <div class="mx-auto max-w-7xl px-5 pt-20 sm:px-8">
+    <div class="flex flex-col gap-10 border-b border-white/10 pb-12 md:flex-row md:items-end md:justify-between">
+      <p class="font-display text-4xl font-semibold tracking-tight sm:text-6xl">مبني ليدوم.</p>
+      <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-white/60">
+        <a class="link-sweep text-white/70 no-underline" href="ar/#services">خدماتنا</a>
+        <a class="link-sweep text-white/70 no-underline" href="ar/#process">طريقة العمل</a>
+        <a class="link-sweep text-white/70 no-underline" href="ar/start/">ابدأ مشروعك</a>
+        <a class="link-sweep text-white/70 no-underline" href="ar/accounts/login/">دخول الفريق</a>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-4 py-6 font-mono text-xs text-white/40">
+      <span>© 2026 Kstro. جميع الحقوق محفوظة.</span>
+      <span>القاهرة <time class="text-pumpkin" data-cairo-clock>--:--</time> (GMT+2/3)</span>
+    </div>
+  </div>
+  <p class="footer-wordmark pointer-events-none select-none text-center font-display font-black leading-none tracking-tighter text-white/[0.04]" aria-hidden="true">kstro</p>
+</footer>
+
+</div>
+
+</body>
+</html>
