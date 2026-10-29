@@ -15,7 +15,7 @@
   <script src="static/vendor/alpine-csp.min.js" defer></script>
   
 </head>
-<body class="min-h-screen" hx-headers='{"X-CSRFToken": "1EnVqAnYqKnpZ1nCNwSGXMRGbZCeNTxRbWYQjPiN2k2rrNjK8qbMTYKsMemSwSz6"}'><div style="position:fixed;inset-inline:0;bottom:0;z-index:9999;padding:.5rem 1rem;background:#0f0f10;color:#fff;font:500 12px/1.4 system-ui,sans-serif;text-align:center;opacity:.92">Preview copy: forms here don't send anything. Sign-in works on the live CRM.</div>
+<body class="min-h-screen" hx-headers='{"X-CSRFToken": ""}'><div style="position:fixed;inset-inline:0;bottom:0;z-index:9999;padding:.45rem 1rem;background:#0f0f10;color:#fff;font:500 12px/1.4 system-ui,sans-serif;text-align:center;opacity:.92;pointer-events:none">Preview copy: forms here don't send anything. Sign in with any email and password to see the CRM demo.</div>
   
 <div class="grid min-h-screen lg:grid-cols-2">
   <aside class="relative hidden overflow-hidden bg-ink p-12 text-white lg:flex lg:flex-col lg:justify-between">
@@ -45,21 +45,21 @@
       
   <h1 class="font-display text-3xl font-semibold">Built to hold</h1>
   <p class="mt-1 text-sm text-fg-muted">Sign in to your workspace.</p>
-  <form action="#" onsubmit="return false" class="form-plain mt-8">
+  <form method="get" action="app/" class="form-plain mt-8">
     
     
     <p>
       <label for="id_login">Email</label>
       
-      <input type="email" name="login" id="id_login" autocomplete="email" required autofocus value="">
+      <input type="email" id="id_login" autocomplete="email" required autofocus value="">
     </p>
     <p>
       <label for="id_password">Password</label>
       
-      <input type="password" name="password" id="id_password" autocomplete="current-password" required>
+      <input type="password" id="id_password" autocomplete="current-password" required>
     </p>
     <p class="flex items-center justify-between text-sm">
-      <label class="!mb-0 flex items-center gap-2 font-normal"><input type="checkbox" name="remember" class="accent-pumpkin"> Remember me</label>
+      <label class="!mb-0 flex items-center gap-2 font-normal"><input type="checkbox" class="accent-pumpkin"> Remember me</label>
       <a href="accounts/password/reset/">Forgot password?</a>
     </p>
     
@@ -72,5 +72,33 @@
 </div>
 
 
+<script>
+(function () {
+  var t;
+  function toast() {
+    var el = document.getElementById("kstro-preview-toast");
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "kstro-preview-toast";
+      el.style.cssText = "position:fixed;left:50%;top:1rem;transform:translateX(-50%);z-index:10000;" +
+        "padding:.6rem 1rem;border-radius:.75rem;background:#ff7a1a;color:#0f0f10;" +
+        "font:600 13px/1.4 system-ui,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.25)";
+      el.textContent = "Preview only: changes are not saved.";
+      document.body.appendChild(el);
+    }
+    el.style.display = "block";
+    clearTimeout(t);
+    t = setTimeout(function () { el.style.display = "none"; }, 2500);
+  }
+  document.addEventListener("htmx:beforeRequest", function (e) {
+    var verb = (e.detail.requestConfig && e.detail.requestConfig.verb) || "get";
+    if (verb.toLowerCase() !== "get") { e.preventDefault(); toast(); }
+  });
+  document.addEventListener("submit", function (e) {
+    var f = e.target;
+    if ((f.getAttribute("method") || "get").toLowerCase() === "post") { e.preventDefault(); toast(); }
+  }, true);
+})();
+</script>
 </body>
 </html>

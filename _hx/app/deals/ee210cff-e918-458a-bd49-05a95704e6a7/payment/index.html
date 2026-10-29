@@ -1,0 +1,108 @@
+
+
+<div x-data="modal" x-on:keydown.escape.window="close" class="fixed inset-0 z-[65] flex items-end justify-center bg-ink/50 backdrop-blur-sm sm:items-center sm:p-4" x-on:click.self="close">
+  <div class="modal-panel card max-h-[92vh] w-full overflow-y-auto rounded-b-none shadow-2xl sm:rounded-b-(--radius-card) sm:max-w-lg" role="dialog" aria-modal="true">
+    <header class="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-line bg-surface px-6 py-4">
+      <div class="min-w-0">
+        <p class="code truncate text-xs text-fg-muted">#1017 · Luxorly</p>
+        <h2 class="text-lg font-semibold">Record payment</h2>
+      </div>
+      <button type="button" class="btn-ghost px-2" x-on:click="close" aria-label="Close">
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M18 6 6 18M6 6l12 12"/>
+
+</svg>
+</button>
+    </header>
+    <div class="px-6 py-5">
+<div class="mb-5 grid grid-cols-3 gap-3 text-sm">
+  <div class="rounded-xl bg-surface-2 p-3"><p class="text-xs text-fg-muted">Agreed</p><p class="num font-semibold">15,000.00 EGP</p></div>
+  <div class="rounded-xl bg-surface-2 p-3"><p class="text-xs text-fg-muted">Paid</p><p class="num font-semibold">0.00 EGP</p></div>
+  <div class="rounded-xl bg-surface-2 p-3"><p class="text-xs text-fg-muted">Deposit (50%)</p><p class="num font-semibold">7,500.00 EGP</p></div>
+</div>
+<form hx-post="app/deals/ee210cff-e918-458a-bd49-05a95704e6a7/payment/" hx-target="#modal" hx-encoding="multipart/form-data" hx-boost="false">
+  
+  
+
+
+<div class="grid gap-4 sm:grid-cols-2">
+  
+    <div class=" ">
+      
+        <label for="id_amount" class="label">Amount (EGP)</label>
+        <input type="number" name="amount" value="15000.00" min="0" step="0.01" class="input" required id="id_amount">
+        
+      
+      
+    </div>
+  
+    <div class=" ">
+      
+        <label for="id_method" class="label">Method</label>
+        <select name="method" class="input" id="id_method">
+  <option value="cash">Cash</option>
+
+  <option value="instapay">InstaPay</option>
+
+  <option value="bank_transfer">Bank transfer</option>
+
+  <option value="vodafone_cash">Vodafone Cash</option>
+
+  <option value="card">Card</option>
+
+</select>
+        
+      
+      
+    </div>
+  
+    <div class=" ">
+      
+        <label for="id_paid_at" class="label">Paid at <span class="font-normal text-fg-muted">· optional</span></label>
+        <input type="datetime-local" name="paid_at" class="input" id="id_paid_at">
+        
+      
+      
+    </div>
+  
+    <div class=" ">
+      
+        <label for="id_reference" class="label">Reference <span class="font-normal text-fg-muted">· optional</span></label>
+        <input type="text" name="reference" maxlength="100" class="input" id="id_reference">
+        
+      
+      
+    </div>
+  
+    <div class=" sm:col-span-2">
+      
+        <label for="id_receipt" class="label">Receipt <span class="font-normal text-fg-muted">· optional</span></label>
+        <input type="file" name="receipt" class="input" id="id_receipt">
+        
+      
+      
+    </div>
+  
+    <div class=" sm:col-span-2">
+      
+        <label for="id_notes" class="label">Notes <span class="font-normal text-fg-muted">· optional</span></label>
+        <textarea name="notes" cols="40" rows="2" class="input" id="id_notes">
+</textarea>
+        
+      
+      
+    </div>
+  
+</div>
+
+  <p class="mt-3 text-xs text-fg-muted">The financial status updates automatically. Recording the deposit lets the deal move to “Waiting for docs”.</p>
+  
+<div class="mt-6 flex justify-end gap-2 border-t border-line pt-4">
+  <button type="button" class="btn-secondary" x-on:click="close">Cancel</button>
+  <button type="submit" class="btn-primary">Record payment<span class="htmx-indicator spinner"></span></button>
+</div>
+
+</form>
+</div>
+  </div>
+</div>

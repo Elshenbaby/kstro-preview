@@ -23,7 +23,7 @@
   <script src="static/js/site.js" defer></script>
 
 </head>
-<body class="min-h-screen" hx-headers='{"X-CSRFToken": "Kh3qq5r62SnPL9VGtWhL4uisonLgOsba47iwvNGcylNauFZbBUUB47QkFc9Oq6JJ"}'><div style="position:fixed;inset-inline:0;bottom:0;z-index:9999;padding:.5rem 1rem;background:#0f0f10;color:#fff;font:500 12px/1.4 system-ui,sans-serif;text-align:center;opacity:.92">Preview copy: forms here don't send anything. Sign-in works on the live CRM.</div>
+<body class="min-h-screen" hx-headers='{"X-CSRFToken": ""}'><div style="position:fixed;inset-inline:0;bottom:0;z-index:9999;padding:.45rem 1rem;background:#0f0f10;color:#fff;font:500 12px/1.4 system-ui,sans-serif;text-align:center;opacity:.92;pointer-events:none">Preview copy: forms here don't send anything. Sign in with any email and password to see the CRM demo.</div>
   
 <div class="site">
   
@@ -247,7 +247,7 @@
           </div>
           <div>
             <label class="label" for="id_phone">Phone / WhatsApp</label>
-            <input class="input-lg num" id="id_phone" name="phone" type="tel" dir="ltr" required maxlength="32" autocomplete="tel" placeholder="010 1234 5678" value="">
+            <input class="input-lg num" id="id_phone" name="phone" type="tel" dir="ltr" required maxlength="32" autocomplete="tel" placeholder="+20 100 000 0000" value="">
             
 
           </div>
@@ -304,5 +304,33 @@
 
 </div>
 
+<script>
+(function () {
+  var t;
+  function toast() {
+    var el = document.getElementById("kstro-preview-toast");
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "kstro-preview-toast";
+      el.style.cssText = "position:fixed;left:50%;top:1rem;transform:translateX(-50%);z-index:10000;" +
+        "padding:.6rem 1rem;border-radius:.75rem;background:#ff7a1a;color:#0f0f10;" +
+        "font:600 13px/1.4 system-ui,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.25)";
+      el.textContent = "Preview only: changes are not saved.";
+      document.body.appendChild(el);
+    }
+    el.style.display = "block";
+    clearTimeout(t);
+    t = setTimeout(function () { el.style.display = "none"; }, 2500);
+  }
+  document.addEventListener("htmx:beforeRequest", function (e) {
+    var verb = (e.detail.requestConfig && e.detail.requestConfig.verb) || "get";
+    if (verb.toLowerCase() !== "get") { e.preventDefault(); toast(); }
+  });
+  document.addEventListener("submit", function (e) {
+    var f = e.target;
+    if ((f.getAttribute("method") || "get").toLowerCase() === "post") { e.preventDefault(); toast(); }
+  }, true);
+})();
+</script>
 </body>
 </html>

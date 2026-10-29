@@ -1,0 +1,83 @@
+
+
+<div x-data="modal" x-on:keydown.escape.window="close" class="fixed inset-0 z-[65] flex items-end justify-center bg-ink/50 backdrop-blur-sm sm:items-center sm:p-4" x-on:click.self="close">
+  <div class="modal-panel card max-h-[92vh] w-full overflow-y-auto rounded-b-none shadow-2xl sm:rounded-b-(--radius-card) sm:max-w-lg" role="dialog" aria-modal="true">
+    <header class="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-line bg-surface px-6 py-4">
+      <div class="min-w-0">
+        <p class="code truncate text-xs text-fg-muted">Cairo Smiles Dental</p>
+        <h2 class="text-lg font-semibold">Deal won: create the deal</h2>
+      </div>
+      <button type="button" class="btn-ghost px-2" x-on:click="close" aria-label="Close">
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M18 6 6 18M6 6l12 12"/>
+
+</svg>
+</button>
+    </header>
+    <div class="px-6 py-5">
+<p class="mb-5 text-sm text-fg-muted">This creates the client and the deal (status “Deal won”), assigns a PM and gives the deal its code. The 50% deposit is the next step.</p>
+<form hx-post="app/leads/e1a7a1fc-fa6b-4450-80d8-55a19bd4c155/convert/" hx-target="#modal" hx-boost="false">
+  
+  
+
+
+<div class="grid gap-4 sm:grid-cols-2">
+  
+    <div class=" ">
+      
+        <label for="id_package" class="label">Package</label>
+        <select name="package" class="input" required id="id_package">
+  <option value="" selected>---------</option>
+
+  <option value="3e42cb6c-39fb-4dc2-b36d-51efac2b24c0">Silver</option>
+
+  <option value="96e8f983-54c5-49b4-8b40-9ba7f2047393">Gold</option>
+
+  <option value="5f0e6569-6d2e-4c9e-8c77-fa07d150a7ae">Platinum</option>
+
+</select>
+        
+      
+      
+    </div>
+  
+    <div class=" ">
+      
+        <label for="id_discount_amount" class="label">Discount (EGP)</label>
+        <input type="number" name="discount_amount" value="0" min="0" step="0.01" class="input" required id="id_discount_amount">
+        
+      
+      
+    </div>
+  
+    <div class=" ">
+      
+        <label for="id_contact_name" class="label">Contact name <span class="font-normal text-fg-muted">· optional</span></label>
+        <input type="text" name="contact_name" value="Karim Gamal" maxlength="150" class="input" id="id_contact_name">
+        
+      
+      
+    </div>
+  
+    <div class=" ">
+      
+        <label for="id_industry" class="label">Industry <span class="font-normal text-fg-muted">· optional</span></label>
+        <input type="text" name="industry" maxlength="100" class="input" id="id_industry">
+        
+      
+      
+    </div>
+  
+</div>
+
+  <p class="mt-3 text-xs text-fg-muted">Discounts above the sales limit wait for sales-lead approval.</p>
+  
+<div class="mt-6 flex justify-end gap-2 border-t border-line pt-4">
+  <button type="button" class="btn-secondary" x-on:click="close">Cancel</button>
+  <button type="submit" class="btn-primary">Create deal<span class="htmx-indicator spinner"></span></button>
+</div>
+
+</form>
+</div>
+  </div>
+</div>

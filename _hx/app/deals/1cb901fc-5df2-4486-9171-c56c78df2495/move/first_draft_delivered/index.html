@@ -1,0 +1,53 @@
+
+
+<div x-data="modal" x-on:keydown.escape.window="close" class="fixed inset-0 z-[65] flex items-end justify-center bg-ink/50 backdrop-blur-sm sm:items-center sm:p-4" x-on:click.self="close">
+  <div class="modal-panel card max-h-[92vh] w-full overflow-y-auto rounded-b-none shadow-2xl sm:rounded-b-(--radius-card) sm:max-w-lg" role="dialog" aria-modal="true">
+    <header class="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-line bg-surface px-6 py-4">
+      <div class="min-w-0">
+        <p class="code truncate text-xs text-fg-muted">#1027 · Cairo Smiles Dental</p>
+        <h2 class="text-lg font-semibold">QA passed</h2>
+      </div>
+      <button type="button" class="btn-ghost px-2" x-on:click="close" aria-label="Close">
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M18 6 6 18M6 6l12 12"/>
+
+</svg>
+</button>
+    </header>
+    <div class="px-6 py-5">
+<p class="mb-4 flex flex-wrap items-center gap-2 text-sm">
+  
+<span class="chip-attention whitespace-nowrap"><span class="size-1.5 rounded-full bg-current"></span>Under review</span>
+
+  <span class="text-fg-muted rtl:-scale-x-100">→</span>
+  <span class="chip-neutral">First draft delivered</span>
+</p>
+
+  <div class="mb-4 rounded-xl bg-warning-soft p-4 text-sm text-warning">
+    <p class="font-semibold">Not ready yet:</p>
+    <ul class="mt-1 space-y-1"><li>• The latest QA review has not passed.</li></ul>
+  </div>
+
+<form hx-post="app/deals/1cb901fc-5df2-4486-9171-c56c78df2495/move/first_draft_delivered/" hx-target="#modal" hx-boost="false">
+  
+  
+  
+  <label class="label" for="id_reason">Reason / note</label>
+  <textarea name="reason" cols="40" rows="3" class="input" id="id_reason">
+</textarea>
+  
+    <label class="mt-4 flex items-center gap-2 text-sm"><input type="checkbox" name="override" class="size-4 accent-pumpkin" id="id_override"> Override the blocked checks (admin)</label>
+    <p class="mt-1 text-xs text-fg-muted">Overrides need a reason and are recorded on the deal's history.</p>
+  
+  
+    
+<div class="mt-6 flex justify-end gap-2 border-t border-line pt-4">
+  <button type="button" class="btn-secondary" x-on:click="close">Cancel</button>
+  <button type="submit" class="btn-primary">QA passed<span class="htmx-indicator spinner"></span></button>
+</div>
+
+  
+</form>
+</div>
+  </div>
+</div>

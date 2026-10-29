@@ -1,0 +1,45 @@
+
+
+<div x-data="modal" x-on:keydown.escape.window="close" class="fixed inset-0 z-[65] flex items-end justify-center bg-ink/50 backdrop-blur-sm sm:items-center sm:p-4" x-on:click.self="close">
+  <div class="modal-panel card max-h-[92vh] w-full overflow-y-auto rounded-b-none shadow-2xl sm:rounded-b-(--radius-card) sm:max-w-lg" role="dialog" aria-modal="true">
+    <header class="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-line bg-surface px-6 py-4">
+      <div class="min-w-0">
+        <p class="code truncate text-xs text-fg-muted">#1018 · Atlas Gym</p>
+        <h2 class="text-lg font-semibold">Cancel deal</h2>
+      </div>
+      <button type="button" class="btn-ghost px-2" x-on:click="close" aria-label="Close">
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M18 6 6 18M6 6l12 12"/>
+
+</svg>
+</button>
+    </header>
+    <div class="px-6 py-5">
+<p class="mb-4 flex flex-wrap items-center gap-2 text-sm">
+  
+<span class="chip-neutral whitespace-nowrap"><span class="size-1.5 rounded-full bg-current"></span>Deal won</span>
+
+  <span class="text-fg-muted rtl:-scale-x-100">→</span>
+  <span class="chip-neutral">Cancelled</span>
+</p>
+
+<form hx-post="app/deals/ce4db262-3e65-4508-8beb-706b2bf8fd6b/move/cancelled/" hx-target="#modal" hx-boost="false">
+  
+  
+  
+  <label class="label" for="id_reason">Reason / note <span class="text-danger">*</span></label>
+  <textarea name="reason" cols="40" rows="3" class="input" id="id_reason">
+</textarea>
+  
+  
+    
+<div class="mt-6 flex justify-end gap-2 border-t border-line pt-4">
+  <button type="button" class="btn-secondary" x-on:click="close">Cancel</button>
+  <button type="submit" class="btn-primary">Cancel deal<span class="htmx-indicator spinner"></span></button>
+</div>
+
+  
+</form>
+</div>
+  </div>
+</div>

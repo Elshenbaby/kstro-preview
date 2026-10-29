@@ -1,0 +1,71 @@
+
+
+<div x-data="modal" x-on:keydown.escape.window="close" class="fixed inset-0 z-[65] flex items-end justify-center bg-ink/50 backdrop-blur-sm sm:items-center sm:p-4" x-on:click.self="close">
+  <div class="modal-panel card max-h-[92vh] w-full overflow-y-auto rounded-b-none shadow-2xl sm:rounded-b-(--radius-card) sm:max-w-lg" role="dialog" aria-modal="true">
+    <header class="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-line bg-surface px-6 py-4">
+      <div class="min-w-0">
+        <p class="code truncate text-xs text-fg-muted">Pegasus Travel</p>
+        <h2 class="text-lg font-semibold">Book a meeting</h2>
+      </div>
+      <button type="button" class="btn-ghost px-2" x-on:click="close" aria-label="Close">
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M18 6 6 18M6 6l12 12"/>
+
+</svg>
+</button>
+    </header>
+    <div class="px-6 py-5">
+<form hx-post="app/leads/74e92c29-f5d4-4833-856e-49ae9e8b8fc6/meeting/" hx-target="#modal" hx-boost="false">
+  
+  
+
+
+<div class="grid gap-4 ">
+  
+    <div class=" ">
+      
+        <label for="id_scheduled_at" class="label">When</label>
+        <input type="datetime-local" name="scheduled_at" class="input" required id="id_scheduled_at">
+        
+      
+      
+    </div>
+  
+    <div class=" ">
+      
+        <label for="id_kind" class="label">Type</label>
+        <select name="kind" class="input" id="id_kind">
+  <option value="call">Call</option>
+
+  <option value="online">Online</option>
+
+  <option value="in_person">In person</option>
+
+</select>
+        
+      
+      
+    </div>
+  
+    <div class=" ">
+      
+        <label for="id_notes" class="label">Notes <span class="font-normal text-fg-muted">· optional</span></label>
+        <textarea name="notes" cols="40" rows="2" class="input" id="id_notes">
+</textarea>
+        
+      
+      
+    </div>
+  
+</div>
+
+  
+<div class="mt-6 flex justify-end gap-2 border-t border-line pt-4">
+  <button type="button" class="btn-secondary" x-on:click="close">Cancel</button>
+  <button type="submit" class="btn-primary">Book meeting<span class="htmx-indicator spinner"></span></button>
+</div>
+
+</form>
+</div>
+  </div>
+</div>

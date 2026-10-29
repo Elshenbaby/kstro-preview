@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en" dir="ltr"
+      data-theme-pref="system">
+<head>
+  <base href="/kstro-preview/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="htmx-config" content='{"includeIndicatorStyles": false, "allowEval": false, "allowScriptTags": false, "globalViewTransitions": true, "scrollIntoViewOnBoost": false, "responseHandling": [{"code": "204", "swap": false}, {"code": "[23]..", "swap": true}, {"code": "422", "swap": true}, {"code": "[45]..", "swap": false, "error": true}]}'>
+  <title>#1026 Queen Beauty · Kstro CRM</title>
+  <link rel="icon" href="static/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="static/css/app.css">
+  <script src="static/js/theme.js"></script>
+  <script src="static/vendor/htmx.min.js" defer></script>
+  <script src="static/js/app.js" defer></script>
+  <script src="static/vendor/alpine-csp.min.js" defer></script>
+  
+</head>
+<body class="min-h-screen" hx-headers='{"X-CSRFToken": ""}'><div style="position:fixed;inset-inline:0;bottom:0;z-index:9999;padding:.45rem 1rem;background:#0f0f10;color:#fff;font:500 12px/1.4 system-ui,sans-serif;text-align:center;opacity:.92;pointer-events:none">CRM demo with sample data: browse freely, changes are not saved.</div>
+  
+<div class="flex min-h-screen" x-data="sidebar" hx-boost="true" hx-target="body" hx-swap="innerHTML show:no-scroll">
+  
+
+<div x-show="open" x-cloak class="fixed inset-0 z-30 bg-ink/50 lg:hidden" x-on:click="close"></div>
+<aside class="fixed inset-y-0 start-0 z-40 flex w-64 -translate-x-full flex-col bg-sidebar text-white transition-transform rtl:translate-x-full lg:sticky lg:top-0 lg:h-screen lg:shrink-0 lg:translate-x-0 rtl:lg:translate-x-0"
+       x-bind:class="panelClass" aria-label="Main navigation">
+  <div class="flex h-16 items-center justify-between px-5">
+    <a href="app/" class="text-white no-underline">
+<span class="inline-flex items-center gap-2.5 ">
+  <svg class="h-7 w-auto text-pumpkin" viewBox="0 0 131 141" fill="currentColor" aria-hidden="true"><path d="M0 0H36V106A35 35 0 0 1 1 141H0Z"/><path d="M90 0H131L75 104H131V141H108A62 62 0 0 1 48 71Z"/></svg>
+  <span class="font-display text-2xl font-medium tracking-tight">kstro</span>
+</span>
+</a>
+    <button type="button" class="btn-ghost text-white/70 lg:hidden" x-on:click="close" aria-label="Close menu">
+      
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M18 6 6 18M6 6l12 12"/>
+
+</svg>
+
+    </button>
+  </div>
+  <nav class="flex-1 space-y-1 px-3 py-4">
+    
+      <a href="app/" class="nav-item" >
+        
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>
+
+</svg>
+
+        <span>Home</span>
+      </a>
+    
+      <a href="app/leads/" class="nav-item" >
+        
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6.5 6.5 0 0 1 3.5 6"/>
+
+</svg>
+
+        <span>Leads</span>
+      </a>
+    
+      <a href="app/deals/" class="nav-item" >
+        
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/>
+
+</svg>
+
+        <span>Deals</span>
+      </a>
+    
+      <a href="app/tickets/" class="nav-item" >
+        
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"/><path d="M13 6v12" stroke-dasharray="2 2"/>
+
+</svg>
+
+        <span>Tickets</span>
+      </a>
+    
+      <a href="app/finance/" class="nav-item" >
+        
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M16 15h2"/><path d="M6 6V5a2 2 0 0 1 2-2h9"/>
+
+</svg>
+
+        <span>Finance</span>
+      </a>
+    
+      <a href="app/settings/" class="nav-item" >
+        
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>
+
+</svg>
+
+        <span>Settings</span>
+      </a>
+    
+  </nav>
+  <div class="border-t border-white/10 px-5 py-4 font-mono text-xs text-white/40">Built to hold</div>
+</aside>
+
+  <div class="flex min-w-0 flex-1 flex-col">
+    
+<header class="sticky top-0 z-20 flex h-16 items-center gap-3 border-b border-line bg-surface/90 px-4 backdrop-blur sm:px-6">
+  <button type="button" class="btn-ghost px-2 lg:hidden" x-on:click="toggle" aria-label="Open menu">
+    
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 6h16M4 12h16M4 18h16"/>
+
+</svg>
+
+  </button>
+
+  <button type="button" x-data="paletteTrigger" x-on:click="open"
+          class="hidden h-10 w-full max-w-md items-center gap-3 rounded-lg border border-line bg-surface-2 px-3 text-sm text-fg-muted transition-colors hover:border-fg-muted md:flex">
+    
+<svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+
+</svg>
+
+    <span>Search deals, clients, phone…</span>
+    <span class="ms-auto flex gap-1"><kbd class="kbd">⌘</kbd><kbd class="kbd">K</kbd></span>
+  </button>
+  <button type="button" x-data="paletteTrigger" x-on:click="open" class="btn-ghost px-2 md:hidden" aria-label="Search">
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+
+</svg>
+</button>
+
+  <div class="ms-auto flex items-center gap-1">
+    
+    <form action="i18n/setlang/" method="post">
+      
+      <input type="hidden" name="next" value="/app/deals/003cdb3b-10e0-49f6-9236-92e3f1b9c5d8/">
+      <input type="hidden" name="language" value="ar">
+      <button type="submit" class="btn-ghost px-2" title="Switch language">
+        
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>
+
+</svg>
+
+        <span class="text-xs font-semibold">ع</span>
+      </button>
+    </form>
+
+    <div x-data="themeToggle">
+      <form hx-post="app/preferences/theme/" hx-swap="none" hx-trigger="submit">
+        <input type="hidden" name="theme" value="system">
+      </form>
+      <button type="button" class="btn-ghost px-2" x-on:click="cycle" title="Theme: system / light / dark">
+        <span x-show="isSystem">
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>
+
+</svg>
+</span>
+        <span x-show="isLight" x-cloak>
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+
+</svg>
+</span>
+        <span x-show="isDark" x-cloak>
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+
+</svg>
+</span>
+        <span class="sr-only">Change theme</span>
+      </button>
+    </div>
+
+    <div class="relative" x-data="dropdown" x-on:click.outside="close">
+      <button type="button" class="btn-ghost relative px-2" title="Notifications" x-on:click="toggle"
+              hx-get="_hx/app/notifications/" hx-target="#notif-panel" hx-swap="innerHTML" hx-boost="false">
+        
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/>
+
+</svg>
+
+        
+      </button>
+      <div x-show="open" x-cloak class="card absolute end-0 z-30 mt-2 w-[22rem] overflow-hidden shadow-xl">
+        <div id="notif-panel"><p class="p-6 text-center text-sm text-fg-muted">…</p></div>
+      </div>
+    </div>
+
+    <div class="relative" x-data="dropdown" x-on:click.outside="close">
+      <button type="button" class="flex items-center gap-2 rounded-lg px-2 py-1 hover:bg-surface-2" x-on:click="toggle">
+        <span class="grid size-8 place-items-center rounded-full bg-ink text-xs font-semibold text-white dark:bg-surface-2">ME</span>
+        <span class="hidden text-start text-sm leading-tight sm:block">
+          <span class="block font-medium">Mohamed El-Shenbaby</span>
+          <span class="block text-xs text-fg-muted">admin@kstro.local</span>
+        </span>
+      </button>
+      <div x-show="open" x-cloak class="card absolute end-0 mt-2 w-56 p-1 shadow-lg">
+        <a href="accounts/2fa/" class="btn-ghost w-full justify-start">
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>
+
+</svg>
+Two-factor authentication</a>
+        <a href="accounts/password/change/" class="btn-ghost w-full justify-start">
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>
+
+</svg>
+Change password</a>
+        <form method="get" action="accounts/login/">
+          
+          <button type="submit" class="btn-ghost w-full justify-start text-danger">
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 17l5-5-5-5M15 12H3"/>
+
+</svg>
+Sign out</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <main id="main" class="mx-auto w-full max-w-[96rem] flex-1 px-4 py-6 sm:px-6 lg:px-8">
+      
+<a href="app/deals/" class="mb-4 inline-flex items-center gap-1 text-sm text-fg-muted no-underline hover:text-fg"><span class="rtl:-scale-x-100">←</span> Deals</a>
+
+
+<header class="card mb-6 overflow-hidden">
+  <div class="flex flex-wrap items-start justify-between gap-6 p-6">
+    <div class="min-w-0">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="code rounded-md bg-ink px-2 py-0.5 text-sm font-semibold text-white dark:bg-surface-2 dark:text-fg">#1026</span>
+        
+<span class="chip-attention whitespace-nowrap"><span class="size-1.5 rounded-full bg-current"></span>Under review</span>
+
+        
+        <span class="chip-neutral">New deal</span>
+      </div>
+      <h1 class="mt-2 truncate font-display text-3xl font-bold tracking-tight">Queen Beauty</h1>
+      <p class="mt-1 text-fg-muted">
+        Gold
+         · Omar Fouad · <a class="num" href="tel:+20 100 000 0000">+20 100 000 0000</a>
+      </p>
+    </div>
+    
+    <div class="flex flex-wrap gap-2">
+      
+        <button type="button" class="btn-secondary"
+                hx-get="_hx/app/deals/003cdb3b-10e0-49f6-9236-92e3f1b9c5d8/move/in_progress/" hx-target="#modal" hx-boost="false"
+                title="Record a failed QA review before sending the build back.">
+          
+<svg class="size-4 text-warning shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>
+
+</svg>
+Send back to build
+        </button>
+      
+        <button type="button" class="btn-secondary"
+                hx-get="_hx/app/deals/003cdb3b-10e0-49f6-9236-92e3f1b9c5d8/move/first_draft_delivered/" hx-target="#modal" hx-boost="false"
+                title="The latest QA review has not passed.">
+          
+<svg class="size-4 text-warning shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>
+
+</svg>
+QA passed
+        </button>
+      
+        <button type="button" class="btn-ghost text-danger"
+                hx-get="_hx/app/deals/003cdb3b-10e0-49f6-9236-92e3f1b9c5d8/move/cancelled/" hx-target="#modal" hx-boost="false"
+                >
+          Cancel deal
+        </button>
+      
+      <button type="button" class="btn-secondary" hx-get="_hx/app/deals/003cdb3b-10e0-49f6-9236-92e3f1b9c5d8/payment/" hx-target="#modal" hx-boost="false">
+<svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M16 15h2"/><path d="M6 6V5a2 2 0 0 1 2-2h9"/>
+
+</svg>
+Record payment</button>
+    </div>
+  </div>
+
+  
+  
+  <ol class="stepper border-t border-line">
+    
+      <li class="step is-done"><span class="step-bar"></span><span class="step-label">Deal won</span></li>
+    
+      <li class="step is-done"><span class="step-bar"></span><span class="step-label">Waiting for docs</span></li>
+    
+      <li class="step is-done"><span class="step-bar"></span><span class="step-label">Accepted</span></li>
+    
+      <li class="step is-done"><span class="step-bar"></span><span class="step-label">In progress</span></li>
+    
+      <li class="step is-current"><span class="step-bar"></span><span class="step-label">Under review</span></li>
+    
+      <li class="step "><span class="step-bar"></span><span class="step-label">First draft delivered</span></li>
+    
+      <li class="step "><span class="step-bar"></span><span class="step-label">Client review</span></li>
+    
+      <li class="step "><span class="step-bar"></span><span class="step-label">Delivered</span></li>
+    
+  </ol>
+  
+
+  
+  <div class="grid gap-px border-t border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+    <div class="bg-surface p-5">
+      <p class="font-mono text-[11px] uppercase tracking-wider text-fg-muted">Internal due</p>
+      <p class="num mt-1 text-xl font-semibold">17 Nov 2026</p>
+      <div class="mt-1">
+<span class="chip-neutral whitespace-nowrap num">19d left</span>
+
+</div>
+    </div>
+    <div class="bg-surface p-5">
+      <p class="font-mono text-[11px] uppercase tracking-wider text-fg-muted">Client due</p>
+      <p class="num mt-1 text-xl font-semibold ">19 Nov 2026</p>
+      <p class="mt-1 text-xs text-fg-muted">21 days in package</p>
+    </div>
+    
+    <div class="bg-surface p-5">
+      <p class="font-mono text-[11px] uppercase tracking-wider text-fg-muted">Payment</p>
+      <p class="num mt-1 text-xl font-semibold">7,250.00 EGP</p>
+      <progress class="meter mt-2" max="14500.000000" value="7250.000000"></progress>
+      <p class="mt-1 text-xs text-fg-muted"><span class="chip-info whitespace-nowrap">Deposit paid</span>
+ of <span class="num">14,500.00 EGP</span></p>
+    </div>
+    <div class="bg-surface p-5">
+      <p class="font-mono text-[11px] uppercase tracking-wider text-fg-muted">Fully paid on</p>
+      <p class="num mt-1 text-xl font-semibold">—</p>
+      <p class="mt-1 text-xs text-fg-muted">Balance <span class="num">7,250.00 EGP</span></p>
+    </div>
+    
+  </div>
+</header>
+
+
+<nav class="tabs mb-6" aria-label="Deal sections">
+  
+    <a href="?tab=overview" class="tab is-active" aria-current="page">Overview</a>
+  
+    <a href="?tab=work" class="tab " >Tasks &amp; tickets</a>
+  
+    <a href="?tab=questionnaire" class="tab " >Questionnaire</a>
+  
+    <a href="?tab=payments" class="tab " >Payments</a>
+  
+    <a href="?tab=credentials" class="tab " >Credentials</a>
+  
+    <a href="?tab=activity" class="tab " >Activity</a>
+  
+</nav>
+
+
+<div class="grid gap-6 lg:grid-cols-[1fr_22rem]">
+  <div class="space-y-6">
+    
+    <section class="card p-5">
+      <h2 class="mb-1 font-semibold">Next steps</h2>
+      <p class="mb-4 text-sm text-fg-muted">What has to be true before each move. Blocked moves explain why.</p>
+      <ul class="space-y-3">
+        
+          <li class="rounded-xl border border-line p-4">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <p class="font-medium">Send back to build <span class="text-fg-muted">→ In progress</span></p>
+              <span class="chip-warning">Blocked</span>
+            </div>
+            <ul class="mt-2 space-y-1 text-sm text-fg-muted"><li class="flex gap-2"><span class="text-warning">•</span>Record a failed QA review before sending the build back.</li></ul>
+          </li>
+        
+          <li class="rounded-xl border border-line p-4">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <p class="font-medium">QA passed <span class="text-fg-muted">→ First draft delivered</span></p>
+              <span class="chip-warning">Blocked</span>
+            </div>
+            <ul class="mt-2 space-y-1 text-sm text-fg-muted"><li class="flex gap-2"><span class="text-warning">•</span>The latest QA review has not passed.</li></ul>
+          </li>
+        
+          <li class="rounded-xl border border-line p-4">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <p class="font-medium">Cancel deal <span class="text-fg-muted">→ Cancelled</span></p>
+              <span class="chip-success">Ready</span>
+            </div>
+            
+          </li>
+        
+      </ul>
+    </section>
+    
+
+    
+
+    
+
+    <section class="card">
+      <header class="flex items-center justify-between border-b border-line px-5 py-3"><h2 class="font-semibold">Recent activity</h2><a href="?tab=activity" class="text-sm">All</a></header>
+      
+<ol class="timeline p-5">
+  
+    <li class="timeline-item">
+      <span class="timeline-dot is-accent"></span>
+      <div class="min-w-0">
+        <p class="text-sm"><span class="font-semibold">Youssef Ali</span> <span class="text-fg-muted">changed status</span>
+          <span class="ms-1 inline-flex items-center gap-1 align-middle"><span class="chip-neutral">In progress</span><span class="text-fg-muted rtl:-scale-x-100">→</span><span class="chip-neutral">Under review</span></span>
+        </p>
+        
+        <p class="num mt-1 text-xs text-fg-muted">29 Oct 2026, 01:49</p>
+      </div>
+    </li>
+  
+    <li class="timeline-item">
+      <span class="timeline-dot is-accent"></span>
+      <div class="min-w-0">
+        <p class="text-sm"><span class="font-semibold">Karim Samir</span> <span class="text-fg-muted">changed status</span>
+          <span class="ms-1 inline-flex items-center gap-1 align-middle"><span class="chip-neutral">Accepted</span><span class="text-fg-muted rtl:-scale-x-100">→</span><span class="chip-neutral">In progress</span></span>
+        </p>
+        
+        <p class="num mt-1 text-xs text-fg-muted">29 Oct 2026, 01:49</p>
+      </div>
+    </li>
+  
+    <li class="timeline-item">
+      <span class="timeline-dot "></span>
+      <div class="min-w-0">
+        <p class="text-sm"><span class="font-semibold">Karim Samir</span> <span class="text-fg-muted">added credential</span>
+          
+        </p>
+        
+        <p class="num mt-1 text-xs text-fg-muted">29 Oct 2026, 01:49</p>
+      </div>
+    </li>
+  
+    <li class="timeline-item">
+      <span class="timeline-dot "></span>
+      <div class="min-w-0">
+        <p class="text-sm"><span class="font-semibold">Karim Samir</span> <span class="text-fg-muted">assigned</span>
+          
+        </p>
+        
+        <p class="num mt-1 text-xs text-fg-muted">29 Oct 2026, 01:49</p>
+      </div>
+    </li>
+  
+    <li class="timeline-item">
+      <span class="timeline-dot "></span>
+      <div class="min-w-0">
+        <p class="text-sm"><span class="font-semibold">Karim Samir</span> <span class="text-fg-muted">assigned</span>
+          
+        </p>
+        
+        <p class="num mt-1 text-xs text-fg-muted">29 Oct 2026, 01:49</p>
+      </div>
+    </li>
+  
+    <li class="timeline-item">
+      <span class="timeline-dot is-accent"></span>
+      <div class="min-w-0">
+        <p class="text-sm"><span class="font-semibold">Karim Samir</span> <span class="text-fg-muted">changed status</span>
+          <span class="ms-1 inline-flex items-center gap-1 align-middle"><span class="chip-neutral">Waiting for docs</span><span class="text-fg-muted rtl:-scale-x-100">→</span><span class="chip-neutral">Accepted</span></span>
+        </p>
+        
+        <p class="num mt-1 text-xs text-fg-muted">29 Oct 2026, 01:49</p>
+      </div>
+    </li>
+  
+</ol>
+
+    </section>
+  </div>
+
+  <aside class="space-y-6">
+    <section class="card p-5">
+      <h2 class="mb-4 text-sm font-semibold text-fg-muted">Team</h2>
+      <ul class="space-y-3 text-sm">
+        <li class="flex items-center justify-between gap-2"><span class="flex items-center gap-2"><span class="grid size-7 shrink-0 place-items-center rounded-full bg-ink text-[10px] font-semibold text-white ring-2 ring-surface dark:bg-surface-2 dark:text-fg" title="Karim Samir">KS</span>
+Karim Samir</span><span class="chip-neutral">PM</span></li>
+        <li class="flex items-center justify-between gap-2"><span class="flex items-center gap-2"><span class="grid size-7 shrink-0 place-items-center rounded-full bg-ink text-[10px] font-semibold text-white ring-2 ring-surface dark:bg-surface-2 dark:text-fg" title="Omar Fathy">OF</span>
+Omar Fathy</span><span class="chip-neutral">Sales</span></li>
+        
+          <li class="flex items-center justify-between gap-2"><span class="flex items-center gap-2"><span class="grid size-7 shrink-0 place-items-center rounded-full bg-ink text-[10px] font-semibold text-white ring-2 ring-surface dark:bg-surface-2 dark:text-fg" title="Hana Mostafa">HM</span>
+Hana Mostafa</span><span class="chip-info">Designer</span></li>
+        
+          <li class="flex items-center justify-between gap-2"><span class="flex items-center gap-2"><span class="grid size-7 shrink-0 place-items-center rounded-full bg-ink text-[10px] font-semibold text-white ring-2 ring-surface dark:bg-surface-2 dark:text-fg" title="Youssef Ali">YA</span>
+Youssef Ali</span><span class="chip-info">Developer</span></li>
+        
+      </ul>
+      
+      <form method="post" action="app/deals/003cdb3b-10e0-49f6-9236-92e3f1b9c5d8/assign/" class="mt-5 space-y-2 border-t border-line pt-4">
+        
+        <select name="user" class="input" required id="id_user">
+  <option value="" selected>Choose a person…</option>
+
+  <option value="22">Ahmed Tarek</option>
+
+  <option value="21">Hana Mostafa</option>
+
+  <option value="20">Salma Ibrahim</option>
+
+  <option value="19">Youssef Ali</option>
+
+</select>
+        <div class="flex gap-2"><select name="role_on_deal" class="input" id="id_role_on_deal">
+  <option value="developer">Developer</option>
+
+  <option value="designer">Designer</option>
+
+  <option value="qa">QA</option>
+
+</select><button class="btn-secondary">Assign</button></div>
+      </form>
+      
+    </section>
+
+    
+    <section class="card p-5">
+      <h2 class="text-sm font-semibold text-fg-muted">Ball with the client?</h2>
+      <p class="mt-1 text-sm text-fg-muted">Pauses the overdue clock until they reply.</p>
+      <form method="post" action="app/deals/003cdb3b-10e0-49f6-9236-92e3f1b9c5d8/waiting/" class="mt-3 space-y-2">
+        
+        
+          <input type="hidden" name="waiting" value="1"><input name="note" class="input" placeholder="What are we waiting for?"><button class="btn-secondary w-full">Pause: waiting on client</button>
+        
+      </form>
+    </section>
+    
+
+    <section class="card p-5 text-sm">
+      <h2 class="mb-3 font-semibold text-fg-muted">Package terms (frozen at signing)</h2>
+      <dl class="space-y-2">
+        <div class="flex justify-between"><dt class="text-fg-muted">Package</dt><dd class="font-medium">Gold</dd></div>
+        <div class="flex justify-between"><dt class="text-fg-muted">Duration</dt><dd class="num">21 days</dd></div>
+        <div class="flex justify-between"><dt class="text-fg-muted">Revisions</dt><dd class="num">0 / 3</dd></div>
+        
+        <div class="flex justify-between"><dt class="text-fg-muted">Official price</dt><dd class="num">15,000.00 EGP</dd></div>
+        <div class="flex justify-between"><dt class="text-fg-muted">Discount</dt><dd class="num">500.00 EGP</dd></div>
+        <div class="flex justify-between border-t border-line pt-2"><dt class="font-medium">Agreed</dt><dd class="num font-semibold">14,500.00 EGP</dd></div>
+        
+        <div class="flex justify-between"><dt class="text-fg-muted">Won on</dt><dd class="num">29 Oct 2026</dd></div>
+      </dl>
+    </section>
+  </aside>
+</div>
+
+
+
+    </main>
+  </div>
+</div>
+<div id="modal"></div>
+
+
+<div x-data="palette" x-on:keydown.window="onKey" x-on:open-palette.window="show">
+  <div x-show="open" x-cloak class="fixed inset-0 z-[70] flex items-start justify-center bg-ink/50 p-4 pt-[12vh] backdrop-blur-sm" x-on:click.self="hide">
+    <div class="palette card w-full max-w-xl overflow-hidden shadow-2xl" role="dialog" aria-label="Search">
+      <div class="flex items-center gap-3 border-b border-line px-4">
+        
+<svg class="size-5 text-fg-muted shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+
+</svg>
+
+        <input x-ref="input" type="search" name="q" autocomplete="off" class="h-14 w-full bg-transparent text-base outline-none placeholder:text-fg-muted"
+               placeholder="Search deals, clients, phone numbers, #codes…"
+               hx-get="_hx/app/search/" hx-trigger="input changed delay:150ms, search" hx-target="#palette-results" hx-boost="false" hx-swap="innerHTML">
+        <kbd class="kbd">esc</kbd>
+      </div>
+      <div id="palette-results" class="max-h-[60vh] overflow-y-auto p-2" x-on:click="hide">
+        
+
+  <p class="px-3 pb-1 pt-2 font-mono text-[11px] uppercase tracking-wider text-fg-muted">Jump to</p>
+  <a data-result href="app/deals/" class="result">
+<svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/>
+
+</svg>
+ Deals board</a>
+  
+    <a data-result href="app/leads/" class="result">
+<svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6.5 6.5 0 0 1 3.5 6"/>
+
+</svg>
+ Leads</a>
+    <a data-result href="app/leads/_q/view=board/" class="result">
+<svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6.5 6.5 0 0 1 3.5 6"/>
+
+</svg>
+ Leads pipeline</a>
+  
+  <a data-result href="app/tickets/" class="result">
+<svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"/><path d="M13 6v12" stroke-dasharray="2 2"/>
+
+</svg>
+ Tickets & my tasks</a>
+  <a data-result href="app/finance/" class="result">
+<svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M16 15h2"/><path d="M6 6V5a2 2 0 0 1 2-2h9"/>
+
+</svg>
+ Finance</a>
+
+
+      </div>
+      <div class="flex items-center gap-4 border-t border-line px-4 py-2 text-xs text-fg-muted">
+        <span><kbd class="kbd">↑</kbd><kbd class="kbd">↓</kbd> move</span>
+        <span><kbd class="kbd">↵</kbd> open</span>
+        <span class="ms-auto"><kbd class="kbd">g</kbd> <kbd class="kbd">d</kbd> deals · <kbd class="kbd">g</kbd> <kbd class="kbd">l</kbd> leads</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="toasts" class="pointer-events-none fixed bottom-4 end-4 z-50 flex w-full max-w-sm flex-col gap-2"  aria-live="polite">
+  
+</div>
+
+<div class="htmx-progress" aria-hidden="true"></div>
+
+<script>
+(function () {
+  var t;
+  function toast() {
+    var el = document.getElementById("kstro-preview-toast");
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "kstro-preview-toast";
+      el.style.cssText = "position:fixed;left:50%;top:1rem;transform:translateX(-50%);z-index:10000;" +
+        "padding:.6rem 1rem;border-radius:.75rem;background:#ff7a1a;color:#0f0f10;" +
+        "font:600 13px/1.4 system-ui,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.25)";
+      el.textContent = "Preview only: changes are not saved.";
+      document.body.appendChild(el);
+    }
+    el.style.display = "block";
+    clearTimeout(t);
+    t = setTimeout(function () { el.style.display = "none"; }, 2500);
+  }
+  document.addEventListener("htmx:beforeRequest", function (e) {
+    var verb = (e.detail.requestConfig && e.detail.requestConfig.verb) || "get";
+    if (verb.toLowerCase() !== "get") { e.preventDefault(); toast(); }
+  });
+  document.addEventListener("submit", function (e) {
+    var f = e.target;
+    if ((f.getAttribute("method") || "get").toLowerCase() === "post") { e.preventDefault(); toast(); }
+  }, true);
+})();
+</script>
+</body>
+</html>

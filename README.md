@@ -1,6 +1,7 @@
-# Kstro — site preview
+# Kstro — site and CRM preview
 
-Static preview of the Kstro public site and staff sign-in page, generated from the
-Kstro CRM app. Forms do not send anything here.
+Static, clickable preview of the Kstro public site and the Kstro CRM, generated from the
+Kstro CRM app with sample data. Sign in with any email and password to open the CRM demo.
+Nothing is saved: forms and actions are disabled in this copy.
 
 Live: https://elshenbaby.github.io/kstro-preview/

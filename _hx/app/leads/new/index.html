@@ -1,0 +1,135 @@
+
+
+<div x-data="modal" x-on:keydown.escape.window="close" class="fixed inset-0 z-[65] flex items-end justify-center bg-ink/50 backdrop-blur-sm sm:items-center sm:p-4" x-on:click.self="close">
+  <div class="modal-panel card max-h-[92vh] w-full overflow-y-auto rounded-b-none shadow-2xl sm:rounded-b-(--radius-card) sm:max-w-lg" role="dialog" aria-modal="true">
+    <header class="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-line bg-surface px-6 py-4">
+      <div class="min-w-0">
+        <p class="code truncate text-xs text-fg-muted">// Leads</p>
+        <h2 class="text-lg font-semibold">New lead</h2>
+      </div>
+      <button type="button" class="btn-ghost px-2" x-on:click="close" aria-label="Close">
+<svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M18 6 6 18M6 6l12 12"/>
+
+</svg>
+</button>
+    </header>
+    <div class="px-6 py-5">
+<form hx-post="app/leads/new/" hx-target="#modal" hx-boost="false">
+  
+  
+
+
+<div class="grid gap-4 sm:grid-cols-2">
+  
+    <div class=" ">
+      
+        <label for="id_name" class="label">Name</label>
+        <input type="text" name="name" maxlength="150" class="input" required id="id_name">
+        
+      
+      
+    </div>
+  
+    <div class=" ">
+      
+        <label for="id_phone" class="label">Phone</label>
+        <input type="text" name="phone" maxlength="32" class="input" required id="id_phone">
+        
+      
+      
+    </div>
+  
+    <div class=" ">
+      
+        <label for="id_email" class="label">Email <span class="font-normal text-fg-muted">· optional</span></label>
+        <input type="email" name="email" maxlength="320" class="input" id="id_email">
+        
+      
+      
+    </div>
+  
+    <div class=" ">
+      
+        <label for="id_business_name" class="label">Business name <span class="font-normal text-fg-muted">· optional</span></label>
+        <input type="text" name="business_name" maxlength="200" class="input" id="id_business_name">
+        
+      
+      
+    </div>
+  
+    <div class=" ">
+      
+        <label for="id_source" class="label">Source</label>
+        <select name="source" class="input" required id="id_source">
+  <option value="" selected>---------</option>
+
+  <option value="6">Cold call</option>
+
+  <option value="5">Event</option>
+
+  <option value="1">Facebook ads</option>
+
+  <option value="2">Instagram</option>
+
+  <option value="4">Referral</option>
+
+  <option value="3">Website form</option>
+
+  <option value="7">WhatsApp</option>
+
+</select>
+        
+      
+      
+    </div>
+  
+    <div class=" ">
+      
+        <label for="id_campaign" class="label">Campaign <span class="font-normal text-fg-muted">· optional</span></label>
+        <input type="text" name="campaign" maxlength="150" class="input" id="id_campaign">
+        
+      
+      
+    </div>
+  
+    <div class=" ">
+      
+        <label for="id_owner" class="label">Owner <span class="font-normal text-fg-muted">· optional</span></label>
+        <select name="owner" class="input" id="id_owner">
+  <option value="" selected>---------</option>
+
+  <option value="14">Mayar Hassan</option>
+
+  <option value="16">Nour Adel</option>
+
+  <option value="15">Omar Fathy</option>
+
+</select>
+        
+      
+      
+    </div>
+  
+    <div class=" sm:col-span-2">
+      
+        <label for="id_notes" class="label">Notes <span class="font-normal text-fg-muted">· optional</span></label>
+        <textarea name="notes" cols="40" rows="3" class="input" id="id_notes">
+</textarea>
+        
+      
+      
+    </div>
+  
+</div>
+
+  
+<div class="mt-6 flex justify-end gap-2 border-t border-line pt-4">
+  <button type="button" class="btn-secondary" x-on:click="close">Cancel</button>
+  <button type="submit" class="btn-primary">Add lead<span class="htmx-indicator spinner"></span></button>
+</div>
+
+</form>
+</div>
+  </div>
+</div>

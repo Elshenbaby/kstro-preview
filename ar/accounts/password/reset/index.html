@@ -17,7 +17,7 @@
   <script src="static/vendor/alpine-csp.min.js" defer></script>
   
 </head>
-<body class="min-h-screen" hx-headers='{"X-CSRFToken": "MMqjA96P8EkYlpiOzGqWRSTUgFyRZznLZBwEzumnslOJF80ARjZ3wGKMxeVKNqZu"}'><div style="position:fixed;inset-inline:0;bottom:0;z-index:9999;padding:.5rem 1rem;background:#0f0f10;color:#fff;font:500 12px/1.4 system-ui,sans-serif;text-align:center;opacity:.92">نسخة للمعاينة: النماذج هنا لا ترسل أي بيانات. تسجيل الدخول يعمل على النظام الفعلي.</div>
+<body class="min-h-screen" hx-headers='{"X-CSRFToken": ""}'><div style="position:fixed;inset-inline:0;bottom:0;z-index:9999;padding:.45rem 1rem;background:#0f0f10;color:#fff;font:500 12px/1.4 system-ui,sans-serif;text-align:center;opacity:.92;pointer-events:none">نسخة للمعاينة: النماذج هنا لا ترسل أي بيانات. سجّل الدخول بأي بريد وكلمة مرور لتجربة النظام.</div>
   
 <div class="grid min-h-screen lg:grid-cols-2">
   <aside class="relative hidden overflow-hidden bg-ink p-12 text-white lg:flex lg:flex-col lg:justify-between">
@@ -97,5 +97,33 @@ type="submit">
 </div>
 
 
+<script>
+(function () {
+  var t;
+  function toast() {
+    var el = document.getElementById("kstro-preview-toast");
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "kstro-preview-toast";
+      el.style.cssText = "position:fixed;left:50%;top:1rem;transform:translateX(-50%);z-index:10000;" +
+        "padding:.6rem 1rem;border-radius:.75rem;background:#ff7a1a;color:#0f0f10;" +
+        "font:600 13px/1.4 system-ui,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.25)";
+      el.textContent = "Preview only: changes are not saved.";
+      document.body.appendChild(el);
+    }
+    el.style.display = "block";
+    clearTimeout(t);
+    t = setTimeout(function () { el.style.display = "none"; }, 2500);
+  }
+  document.addEventListener("htmx:beforeRequest", function (e) {
+    var verb = (e.detail.requestConfig && e.detail.requestConfig.verb) || "get";
+    if (verb.toLowerCase() !== "get") { e.preventDefault(); toast(); }
+  });
+  document.addEventListener("submit", function (e) {
+    var f = e.target;
+    if ((f.getAttribute("method") || "get").toLowerCase() === "post") { e.preventDefault(); toast(); }
+  }, true);
+})();
+</script>
 </body>
 </html>
